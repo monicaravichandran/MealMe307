@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  MealMe
 //
-//  Created by Kalyan Vejalla on 4/7/19.
+//  Created by Kalyan Vejalla, Aniketh Bhat on 4/7/19.
 //  Copyright © 2019 Kalyan Vejalla. All rights reserved.
 //
 
