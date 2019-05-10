@@ -118,22 +118,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    /*
-    @IBAction func didTapSignOut(_ sender: AnyObject) {
-        //GIDSignIn.sharedInstance().signOut()
-        do {
-            try Auth.auth().signOut()
-            try GIDSignIn.sharedInstance()?.signOut()
-            userDefault.removeObject(forKey: "usersignedin")
-            userDefault.synchronize()
-            self.window?.rootViewController?.performSegue(withIdentifier: "SignOutSegue", sender: nil)
-            print("HERE!")
-        } catch let error as NSError{
-            print(error.localizedDescription)
-            
-        }
-    }
- */
 
 
 }

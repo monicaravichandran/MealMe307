@@ -40,14 +40,6 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         }
         
     }
-
-
-    
-   /* @IBAction func didTapSignIn(_ sender: Any) {
-        print("SIGNINNNNN")
-        GIDSignIn.sharedInstance().signIn()
-        
-    }*/
     
 
 
