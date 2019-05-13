@@ -18,6 +18,9 @@
 		30B4B69A2283C951000F951B /* SignOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B4B6992283C951000F951B /* SignOutViewController.swift */; };
 		435658B6EB135B02785FD1BD /* Pods_MealMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC1DF1898CB9D213D9EBC14 /* Pods_MealMeTests.framework */; };
 		483CBE276FB63630F0D71143 /* Pods_MealMeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A12A07FF619BD4F54C4A13 /* Pods_MealMeUITests.framework */; };
+		CEFDB61222852CD6001B2852 /* EaterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDB61122852CD6001B2852 /* EaterTableViewController.swift */; };
+		CEFDB61422854B06001B2852 /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDB61322854B06001B2852 /* MealTableViewCell.swift */; };
+		CEFDB61622854D89001B2852 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDB61522854D89001B2852 /* Meal.swift */; };
 		ECB68757E0ECCFCAB22EAA3F /* Pods_MealMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46E3AC1E7BB0BA68FA0F880 /* Pods_MealMe.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +65,9 @@
 		93F3B651E748E34E0E8961A8 /* Pods-MealMeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealMeUITests.release.xcconfig"; path = "Target Support Files/Pods-MealMeUITests/Pods-MealMeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AEC1DF1898CB9D213D9EBC14 /* Pods_MealMeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealMeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C46E3AC1E7BB0BA68FA0F880 /* Pods_MealMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEFDB61122852CD6001B2852 /* EaterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EaterTableViewController.swift; sourceTree = "<group>"; };
+		CEFDB61322854B06001B2852 /* MealTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
+		CEFDB61522854D89001B2852 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		DE210542A90C3E1E91A15CB6 /* Pods-MealMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealMe.debug.xcconfig"; path = "Target Support Files/Pods-MealMe/Pods-MealMe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +124,7 @@
 		308E350A225AFE4B000D57EC /* MealMe */ = {
 			isa = PBXGroup;
 			children = (
+				CEFDB61122852CD6001B2852 /* EaterTableViewController.swift */,
 				308E3539225AFEF2000D57EC /* GoogleService-Info.plist */,
 				308E350B225AFE4B000D57EC /* AppDelegate.swift */,
 				308E350D225AFE4B000D57EC /* ViewController.swift */,
@@ -126,6 +133,8 @@
 				308E3514225AFE4C000D57EC /* LaunchScreen.storyboard */,
 				308E3517225AFE4C000D57EC /* Info.plist */,
 				30B4B6992283C951000F951B /* SignOutViewController.swift */,
+				CEFDB61322854B06001B2852 /* MealTableViewCell.swift */,
+				CEFDB61522854D89001B2852 /* Meal.swift */,
 			);
 			path = MealMe;
 			sourceTree = "<group>";
@@ -430,8 +439,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				308E350E225AFE4B000D57EC /* ViewController.swift in Sources */,
+				CEFDB61222852CD6001B2852 /* EaterTableViewController.swift in Sources */,
 				30B4B69A2283C951000F951B /* SignOutViewController.swift in Sources */,
 				308E350C225AFE4B000D57EC /* AppDelegate.swift in Sources */,
+				CEFDB61622854D89001B2852 /* Meal.swift in Sources */,
+				CEFDB61422854B06001B2852 /* MealTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,13 +620,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B47TE73F49;
+				DEVELOPMENT_TEAM = J97MKHXHWF;
 				INFOPLIST_FILE = MealMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.karma.MealMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.karma.MealMe123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -627,13 +639,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B47TE73F49;
+				DEVELOPMENT_TEAM = J97MKHXHWF;
 				INFOPLIST_FILE = MealMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.karma.MealMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.karma.MealMe123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
