@@ -3,7 +3,10 @@ language:
 osx_image: 
   - xcode10.2
 before_install:
-  - gem install bundler -- pre
+before_install:
+  - rvm use 1.9.3
+  - gem install bundler
+  - bundle install
 xcode_xcworkspace: 
   - MealMe.xcworkspace # path to your xcodeproj folder
 xcode_scheme: 
