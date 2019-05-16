@@ -2,6 +2,8 @@ language:
   - swift
 osx_image: 
   - xcode10.2
+before_install:
+  - gem install bundler
 xcode_xcworkspace: 
   - MealMe.xcworkspace # path to your xcodeproj folder
 xcode_scheme: 
