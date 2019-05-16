@@ -2,9 +2,12 @@ language:
   - swift
 osx_image: 
   - xcode10.2
-xcode_project: 
-  - MealMe.xcodeproj # path to your xcodeproj folder
+xcode_xcworkspace: 
+  - MealMe.xcworkspace # path to your xcodeproj folder
 xcode_scheme: 
-  - "MealMeTests"
+  - MealMe
 destination: 
   - "platform=iOS Simulator,OS=11.3,name=iPhone X"
+before_install:
+  - pod install
+
