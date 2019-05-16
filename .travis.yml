@@ -2,8 +2,8 @@ language:
   - swift
 osx_image: 
   - xcode10.2
-xcode_workspace: 
-  - "MealMe.xcworkspace" # path to your xcodeproj folder
+xcode_project: 
+  - MealMe.xcodeproj # path to your xcodeproj folder
 xcode_scheme: 
   - "MealMeTests"
 destination: 
