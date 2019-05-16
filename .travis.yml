@@ -3,7 +3,7 @@ language:
 osx_image: 
   - xcode10.2
 xcode_workspace: 
-  - MealMe.xcworkspace # path to your xcodeproj folder
+  - MealMe.xcodeproj # path to your xcodeproj folder
 xcode_scheme: 
   - MealMeTests
 destination: 
