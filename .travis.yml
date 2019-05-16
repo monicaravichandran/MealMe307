@@ -1,7 +1,7 @@
 language: 
   - swift
 osx_image: 
-  - xcode10.2
+  - xcode9
 xcode_workspace: 
   - MealMe.xcodeproj # path to your xcodeproj folder
 xcode_scheme: 
