@@ -6,5 +6,5 @@ xcode_workspace:
   - MealMe.xcworkspace # path to your xcodeproj folder
 xcode_scheme: 
   - MealMeTests
-xcode_sdk: 
-  - iphonesimulator8.4
+xcode_destination: 
+  - "platform=iOS Simulator,OS=11.3,name=iPhone X"
