@@ -2,17 +2,13 @@ language:
   - swift
 osx_image: 
   - xcode10.2
-before_install:
-before_install:
-  - rvm use 1.9.3
-  - gem install bundler
-  - bundle install
-xcode_xcworkspace: 
-  - MealMe.xcworkspace # path to your xcodeproj folder
-xcode_scheme: 
-  - MealMe
-destination: 
-  - "platform=iOS Simulator,OS=11.3,name=iPhone X"
+#xcode_xcworkspace: 
+ # - MealMe.xcworkspace # path to your xcodeproj folder
+#xcode_scheme: 
+ # - MealMe
+#destination: 
+ # - "platform=iOS Simulator,OS=11.3,name=iPhone X"
 before_install:
   - pod install --repo-update
-
+script:
+    - xcodebuild clean -project MealMe.xcworkspace -scheme MealMe -destination "platform=iOS Simulator,name=iPhone X,OS=11.3" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -quiet
