@@ -11,4 +11,4 @@ osx_image:
 before_install:
   - pod install --repo-update
 script:
-    - xcodebuild clean -project MealMe.xcodeproj -scheme MealMe -destination "platform=iOS Simulator, id=B3A5F3C8-0AD6-43A1-BDB1-31A5F12448A6, OS=12.2, name=iPhone X" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -quiet
+    - xcodebuild clean -project MealMe.xcodeproj -scheme MealMe -destination "platform=iOS Simulator,name=iPhone X,OS=12.2" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -quiet
