@@ -14,6 +14,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "30A9D3CC694691B7294567E895BE269F"
+               BuildableName = "FirebaseCore.framework"
+               BlueprintName = "FirebaseCore"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "88854632735B97DDAB1BDA14A9589AD9"
                BuildableName = "FirebaseDatabase.framework"
                BlueprintName = "FirebaseDatabase"
