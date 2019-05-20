@@ -15,7 +15,12 @@ target 'MealMe' do
   target 'MealMeTests' do
     inherit! :search_paths
     # Pods for testing
-  end
+    pod 'Firebase/Auth'
+    pod 'Firebase/Database'
+    pod 'Firebase/Storage'
+    pod 'Firebase/Core'
+    pod 'GoogleSignIn'
+    end
 
   target 'MealMeUITests' do
     inherit! :search_paths
