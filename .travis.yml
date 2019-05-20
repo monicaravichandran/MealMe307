@@ -7,4 +7,4 @@ before_install:
 script:
     - xcodebuild clean -project MealMe.xcodeproj -scheme MealMe -destination "platform=iOS Simulator,name=iPhone X,OS=12.2" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -quiet
 script:
-    - xcodebuild test -project MealMe.xcodeproj -scheme MealMeTests -destination "platform=iOS Simulator,name=iPhone X,OS=12.2" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -quiet
+    - xcodebuild test -project MealMe.xcodeproj -scheme MealMe -destination "platform=iOS Simulator,name=iPhone X,OS=12.2" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -quiet
