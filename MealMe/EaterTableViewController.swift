@@ -19,21 +19,12 @@ class EaterTableViewController: UITableViewController, UISearchResultsUpdating{
         searchController.searchBar.placeholder = "Search for meals"
         navigationItem.searchController = searchController
         //self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MealTableViewCell")
-        //meals = [
-        //    Meal(name:"Pizza", chef:"Aniketh", avgRating: 4.4),
-        //    Meal(name:"Acapulco", chef:"Anand", avgRating: 5.0),
-        //    Meal(name:"Tofu", chef:"Monica", avgRating: 4.7),
-        //    Meal(name:"Trash", chef:"Kalyan", avgRating:0.3)
-        //]
-        self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.rowHeight = 150
-        let handler = MealTableHandler()
-        let meal = Meal(name:"Pizza", chefEmail: "anandrajiv@gmail.com", avgRating: 4.3)
-        handler.getMeal() { (tempMeal) in
-            self.meals += tempMeal
-            self.tableView.reloadData()
-        }
-        
+        meals = [
+            Meal(name:"Pizza", chef:"Aniketh", avgRating: 4.4),
+            Meal(name:"Acapulco", chef:"Anand", avgRating: 5.0),
+            Meal(name:"Tofu", chef:"Monica", avgRating: 4.7),
+            Meal(name:"Trash", chef:"Kalyan", avgRating:0.3)
+        ]
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -60,19 +51,9 @@ class EaterTableViewController: UITableViewController, UISearchResultsUpdating{
         
         let meal = meals[indexPath.row]
         cell.mealName.text = meal.name
-        cell.chefName.text = meal.chefEmail
+        cell.chefName.text = meal.chef
         cell.rating.text = String(meal.avgRating)
         return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "showDetails", sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        let detailsViewController = segue.destination as! MealDetailsViewController
-        // Pass the selected object to the new view controller.
     }
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -124,10 +105,14 @@ class EaterTableViewController: UITableViewController, UISearchResultsUpdating{
     }
     */
 
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-   
- 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
 
 }

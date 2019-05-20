@@ -21,8 +21,6 @@
 		CEFDB61222852CD6001B2852 /* EaterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDB61122852CD6001B2852 /* EaterTableViewController.swift */; };
 		CEFDB61422854B06001B2852 /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDB61322854B06001B2852 /* MealTableViewCell.swift */; };
 		CEFDB61622854D89001B2852 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDB61522854D89001B2852 /* Meal.swift */; };
-		CEFDB618228D0131001B2852 /* MealTableHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDB617228D0131001B2852 /* MealTableHandler.swift */; };
-		CEFDB61A228D3BA9001B2852 /* MealDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDB619228D3BA9001B2852 /* MealDetailsViewController.swift */; };
 		ECB68757E0ECCFCAB22EAA3F /* Pods_MealMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46E3AC1E7BB0BA68FA0F880 /* Pods_MealMe.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,8 +68,6 @@
 		CEFDB61122852CD6001B2852 /* EaterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EaterTableViewController.swift; sourceTree = "<group>"; };
 		CEFDB61322854B06001B2852 /* MealTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
 		CEFDB61522854D89001B2852 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
-		CEFDB617228D0131001B2852 /* MealTableHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableHandler.swift; sourceTree = "<group>"; };
-		CEFDB619228D3BA9001B2852 /* MealDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsViewController.swift; sourceTree = "<group>"; };
 		DE210542A90C3E1E91A15CB6 /* Pods-MealMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealMe.debug.xcconfig"; path = "Target Support Files/Pods-MealMe/Pods-MealMe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,7 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				CEFDB61122852CD6001B2852 /* EaterTableViewController.swift */,
-				CEFDB617228D0131001B2852 /* MealTableHandler.swift */,
 				308E3539225AFEF2000D57EC /* GoogleService-Info.plist */,
 				308E350B225AFE4B000D57EC /* AppDelegate.swift */,
 				308E350D225AFE4B000D57EC /* ViewController.swift */,
@@ -140,7 +135,6 @@
 				30B4B6992283C951000F951B /* SignOutViewController.swift */,
 				CEFDB61322854B06001B2852 /* MealTableViewCell.swift */,
 				CEFDB61522854D89001B2852 /* Meal.swift */,
-				CEFDB619228D3BA9001B2852 /* MealDetailsViewController.swift */,
 			);
 			path = MealMe;
 			sourceTree = "<group>";
@@ -449,8 +443,6 @@
 				30B4B69A2283C951000F951B /* SignOutViewController.swift in Sources */,
 				308E350C225AFE4B000D57EC /* AppDelegate.swift in Sources */,
 				CEFDB61622854D89001B2852 /* Meal.swift in Sources */,
-				CEFDB618228D0131001B2852 /* MealTableHandler.swift in Sources */,
-				CEFDB61A228D3BA9001B2852 /* MealDetailsViewController.swift in Sources */,
 				CEFDB61422854B06001B2852 /* MealTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
