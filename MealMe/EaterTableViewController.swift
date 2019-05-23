@@ -60,7 +60,7 @@ class EaterTableViewController: UITableViewController, UISearchResultsUpdating{
         
         let meal = meals[indexPath.row]
         cell.mealName.text = meal.name
-        cell.chefName.text = meal.chef
+        cell.chefName.text = meal.chefEmail
         cell.rating.text = String(meal.avgRating)
         return cell
     }
