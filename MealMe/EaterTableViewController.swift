@@ -19,12 +19,21 @@ class EaterTableViewController: UITableViewController, UISearchResultsUpdating{
         searchController.searchBar.placeholder = "Search for meals"
         navigationItem.searchController = searchController
         //self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MealTableViewCell")
-        meals = [
-            Meal(name:"Pizza", chef:"Aniketh", avgRating: 4.4),
-            Meal(name:"Acapulco", chef:"Anand", avgRating: 5.0),
-            Meal(name:"Tofu", chef:"Monica", avgRating: 4.7),
-            Meal(name:"Trash", chef:"Kalyan", avgRating:0.3)
-        ]
+        //meals = [
+        //    Meal(name:"Pizza", chef:"Aniketh", avgRating: 4.4),
+        //    Meal(name:"Acapulco", chef:"Anand", avgRating: 5.0),
+        //    Meal(name:"Tofu", chef:"Monica", avgRating: 4.7),
+        //    Meal(name:"Trash", chef:"Kalyan", avgRating:0.3)
+        //]
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.rowHeight = 150
+        let handler = MealTableHandler()
+        let meal = Meal(name:"Pizza", chefEmail: "anandrajiv@gmail.com", avgRating: 4.3)
+        handler.getMeals() { (tempMeal) in
+            self.meals += tempMeal
+            self.tableView.reloadData()
+        }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
