@@ -29,7 +29,7 @@ class EaterTableViewController: UITableViewController, UISearchResultsUpdating{
         self.tableView.rowHeight = 150
         let handler = MealTableHandler()
         let meal = Meal(name:"Pizza", chefEmail: "anandrajiv@gmail.com", avgRating: 4.3)
-        handler.getMeal() { (tempMeal) in
+        handler.getMeals() { (tempMeal) in
             self.meals += tempMeal
             self.tableView.reloadData()
         }
