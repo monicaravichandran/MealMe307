@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
 class EaterTableViewController: UITableViewController, UISearchResultsUpdating{
 
+    let userDefault = UserDefaults()
+    
     var food = [String]()
     let searchController = UISearchController(searchResultsController: nil)
     var meals = [Meal]()
@@ -29,6 +33,7 @@ class EaterTableViewController: UITableViewController, UISearchResultsUpdating{
         self.tableView.rowHeight = 150
         let handler = MealTableHandler()
         let meal = Meal(name:"Pizza", chefEmail: "anandrajiv@gmail.com", avgRating: 4.3)
+        self.meals.append(meal)
         handler.getMeals() { (tempMeal) in
             self.meals += tempMeal
             self.tableView.reloadData()
@@ -67,6 +72,22 @@ class EaterTableViewController: UITableViewController, UISearchResultsUpdating{
     
     func updateSearchResults(for searchController: UISearchController) {
         
+    }
+    
+    @IBAction func signOut(_ sender: Any) {
+       performSegue(withIdentifier: "unwindToSignIn", sender: self)
+        do {
+            try Auth.auth().signOut()
+            try GIDSignIn.sharedInstance()?.signOut()
+            userDefault.removeObject(forKey: "usersignedin")
+            userDefault.synchronize()
+        //self.window?.rootViewController?.performSegue(withIdentifier: "SignOutSegue", sender: nil)
+        } catch let error as NSError{
+            print("error caught")
+            print(error.localizedDescription)
+            
+        }
+      
     }
 
     /*

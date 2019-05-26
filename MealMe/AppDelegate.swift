@@ -29,6 +29,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if (GIDSignIn.sharedInstance()?.hasAuthInKeychain())! {
+            DispatchQueue.main.async {
+                self.window?.rootViewController?.performSegue(withIdentifier: "SignInSegue", sender: nil)
+            }
+        }
+        
         return true
     }
     

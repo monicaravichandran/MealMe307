@@ -7,9 +7,15 @@
 //
 
 import Foundation
+import Firebase
 
 class MealTableHandler {
+    let ref = Database.database().reference()
     
+    func addMeal(meal: Meal) {
+        let meals = ref.child("meals")
+        meals.setValue(["name": meal.name, "chefId": meal.chefEmail, "rating": meal.avgRating])
+    }
     func getMeals(completion: @escaping ([Meal]) -> Void) {
         
     }

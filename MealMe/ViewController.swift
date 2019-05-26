@@ -26,6 +26,11 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         // ...
     }
     
+    @IBAction func unwindToSignIn(segue: UIStoryboardSegue) {
+        
+    }
+    
+    /*
     @IBAction func didTapSignOut(_ sender: Any) {
         do {
             try Auth.auth().signOut()
@@ -40,6 +45,7 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         }
         
     }
+ */
     
 
 
