@@ -1,8 +1,8 @@
 //
-//  MenuViewController.swift
+//  ChefHamburgerViewController.swift
 //  MealMe
 //
-//  Created by Aniketh on 5/27/19.
+//  Created by Aniketh on 5/28/19.
 //  Copyright © 2019 Kalyan Vejalla. All rights reserved.
 //
 
@@ -10,30 +10,30 @@ import UIKit
 import Firebase
 import GoogleSignIn
 
-protocol SlideMenuDelegate {
+protocol SlideMenuDelegate2 {
     func slideMenuItemSelectedAtIndex(_ index: Int32)
 }
 
-class MenuViewController: UIViewController {
-
-    var btnMenu: UIButton!
-    var delegate: SlideMenuDelegate?
+class ChefHamburgerViewController: UIViewController {
+    
+    var btnMenu2: UIButton!
+    var delegate: SlideMenuDelegate2?
     let userDefault = UserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-    @IBOutlet weak var btnCloseMenuOverlay: UIButton!
     
-
-    @IBAction func btnCloseTapped(_ sender: UIButton) {
-        btnMenu.tag = 0
-        btnMenu.isHidden = false
+    @IBOutlet weak var closeButton: UIButton!
+    
+    @IBAction func btnClose(_ sender: UIButton) {
+        btnMenu2.tag = 0
+        btnMenu2.isHidden = false
         if (self.delegate != nil) {
             var index = Int32(sender.tag)
-            if(sender == self.btnCloseMenuOverlay) {
+            if(sender == self.closeButton) {
                 index = -1
             }
             delegate?.slideMenuItemSelectedAtIndex(index)
@@ -49,8 +49,8 @@ class MenuViewController: UIViewController {
         })
     }
     
-    @IBAction func switchToChef(_ sender: Any) {
-        performSegue(withIdentifier: "switchToChef", sender:self)
+    @IBAction func switchToEater(_ sender: Any) {
+        performSegue(withIdentifier: "switchToEater", sender: self)
     }
     
     @IBAction func signOut(_ sender: Any) {
@@ -66,16 +66,6 @@ class MenuViewController: UIViewController {
             print(error.localizedDescription)
             
         }
-        
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
