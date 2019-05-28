@@ -10,9 +10,9 @@ import UIKit
 import Firebase
 import GoogleSignIn
 
-class EaterTableViewController: UITableViewController, UISearchResultsUpdating{
+class EaterTableViewController: BaseViewController, UISearchResultsUpdating{
 
-    let userDefault = UserDefaults()
+   
     
     var food = [String]()
     let searchController = UISearchController(searchResultsController: nil)
@@ -21,6 +21,7 @@ class EaterTableViewController: UITableViewController, UISearchResultsUpdating{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addSlideMenuButton()
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "Search for meals"
         navigationItem.searchController = searchController
@@ -81,21 +82,7 @@ class EaterTableViewController: UITableViewController, UISearchResultsUpdating{
         
     }
     
-    @IBAction func signOut(_ sender: Any) {
-       performSegue(withIdentifier: "unwindToSignIn", sender: self)
-        do {
-            try Auth.auth().signOut()
-            try GIDSignIn.sharedInstance()?.signOut()
-            userDefault.removeObject(forKey: "usersignedin")
-            userDefault.synchronize()
-        //self.window?.rootViewController?.performSegue(withIdentifier: "SignOutSegue", sender: nil)
-        } catch let error as NSError{
-            print("error caught")
-            print(error.localizedDescription)
-            
-        }
-      
-    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
