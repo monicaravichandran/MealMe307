@@ -9,13 +9,26 @@
 import UIKit
 
 class ChefTableViewController: BaseViewController, SlideMenuDelegate2 {
-
+    var meals = [Meal]()
     override func viewDidLoad() {
         super.viewDidLoad()
         addSlideMenuButton()
+        
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.rowHeight = 150
         // Do any additional setup after loading the view.
+        self.navigationController?.isToolbarHidden = false
+        var items = [UIBarButtonItem]()
+        items.append(
+            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        )
+        items.append(
+            UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
+        )
+    
+        self.navigationController?.toolbar.items = items
+        let meal = Meal(name:"Pizza", chefEmail: "anandrajiv@gmail.com", avgRating: 4.3)
+        self.meals.append(meal)
     }
     
     override func onSlideMenuButtonPressed(_ sender: UIButton) {
@@ -59,6 +72,29 @@ class ChefTableViewController: BaseViewController, SlideMenuDelegate2 {
             sender.isEnabled = true
         }, completion:nil)
     }
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return meals.count
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChefCell", for: indexPath) as?  ChefMealTableViewCell else {
+            fatalError("Could not cast")
+        }
+        
+        let meal = meals[indexPath.row]
+        cell.mealName.text = meal.name
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //selectedMeal = meals[indexPath.row]
+    }
+    
 }
     /*
     // MARK: - Navigation
