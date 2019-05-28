@@ -17,11 +17,14 @@ class EaterTableViewController: UITableViewController, UISearchResultsUpdating{
     var food = [String]()
     let searchController = UISearchController(searchResultsController: nil)
     var meals = [Meal]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "Search for meals"
         navigationItem.searchController = searchController
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Meals", style: .plain, target: nil, action: nil)
         //self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MealTableViewCell")
         //meals = [
         //    Meal(name:"Pizza", chef:"Aniketh", avgRating: 4.4),
@@ -70,6 +73,10 @@ class EaterTableViewController: UITableViewController, UISearchResultsUpdating{
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //selectedMeal = meals[indexPath.row]
+    }
+    
     func updateSearchResults(for searchController: UISearchController) {
         
     }
@@ -88,6 +95,17 @@ class EaterTableViewController: UITableViewController, UISearchResultsUpdating{
             
         }
       
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "detailsSegue" {
+            let path = self.tableView.indexPathForSelectedRow
+            let selectedMeal = meals[path!.row]
+            let detailsVC = segue.destination as? MealDetailsViewController
+            detailsVC?.meal = selectedMeal
+        }
     }
 
     /*

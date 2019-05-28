@@ -1,22 +1,18 @@
 //
-//  MealDetailsViewController.swift
+//  ChefDetailsViewController.swift
 //  MealMe
 //
-//  Created by Aniketh on 5/22/19.
+//  Created by Anand Rajiv on 5/26/19.
 //  Copyright © 2019 Kalyan Vejalla. All rights reserved.
 //
 
 import UIKit
 
-class MealDetailsViewController: UIViewController {
-    
-    var meal:Meal?
-    @IBOutlet weak var mealName: UILabel!
-    
+class ChefDetailsViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Meal Details", style: .plain, target: nil, action: nil)
-        mealName.text = meal?.name
+
         // Do any additional setup after loading the view.
     }
     
