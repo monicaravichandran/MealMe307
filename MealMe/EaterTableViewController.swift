@@ -38,7 +38,7 @@ class EaterTableViewController: BaseViewController, UISearchResultsUpdating{
         //    Meal(name:"Trash", chef:"Kalyan", avgRating:0.3)
         //]
         self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.rowHeight = 150
+        self.tableView.rowHeight = 250
         
         let tempUser = Auth.auth().currentUser
         currId = tempUser?.uid
@@ -84,7 +84,9 @@ class EaterTableViewController: BaseViewController, UISearchResultsUpdating{
         
         let meal = meals[indexPath.row]
         cell.mealName.text = meal.name
-        cell.chefName.text = currUser?.name
+        userHandler.getUser(key: meal.chefId) { (tempUser) in
+            cell.chefName.text = tempUser.name
+        }
         cell.rating.text = String(meal.avgRating)
         return cell
     }

@@ -19,6 +19,12 @@
 		483CBE276FB63630F0D71143 /* Pods_MealMeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A12A07FF619BD4F54C4A13 /* Pods_MealMeUITests.framework */; };
 		CE7DD058229653A200453BBA /* MealTableHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7DD057229653A200453BBA /* MealTableHandler.swift */; };
 		CE7DD05C2296540B00453BBA /* MealDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7DD05B2296540B00453BBA /* MealDetailsViewController.swift */; };
+		CEA0ABF8229E13C7005DB53D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0ABF6229E13C7005DB53D /* User.swift */; };
+		CEA0ABF9229E13C7005DB53D /* UserTableHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0ABF7229E13C7005DB53D /* UserTableHandler.swift */; };
+		CEA0ABFB229E13D3005DB53D /* ChefMealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0ABFA229E13D3005DB53D /* ChefMealTableViewCell.swift */; };
+		CEA0ABFE229E13DD005DB53D /* AddMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0ABFC229E13DD005DB53D /* AddMealViewController.swift */; };
+		CEA0ABFF229E13DD005DB53D /* AddMealController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0ABFD229E13DD005DB53D /* AddMealController.swift */; };
+		CEA0AC01229E1C7D005DB53D /* ChefDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0AC00229E1C7D005DB53D /* ChefDetailsViewController.swift */; };
 		CEF990C3229CE6EC003B02E6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF990C2229CE6EC003B02E6 /* BaseViewController.swift */; };
 		CEF990C5229CE798003B02E6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF990C4229CE798003B02E6 /* MenuViewController.swift */; };
 		CEF990C9229CFCCD003B02E6 /* newIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF990C8229CFCCD003B02E6 /* newIcon.png */; };
@@ -73,6 +79,12 @@
 		C46E3AC1E7BB0BA68FA0F880 /* Pods_MealMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7DD057229653A200453BBA /* MealTableHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableHandler.swift; sourceTree = "<group>"; };
 		CE7DD05B2296540B00453BBA /* MealDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsViewController.swift; sourceTree = "<group>"; };
+		CEA0ABF6229E13C7005DB53D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CEA0ABF7229E13C7005DB53D /* UserTableHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableHandler.swift; sourceTree = "<group>"; };
+		CEA0ABFA229E13D3005DB53D /* ChefMealTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChefMealTableViewCell.swift; sourceTree = "<group>"; };
+		CEA0ABFC229E13DD005DB53D /* AddMealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMealViewController.swift; sourceTree = "<group>"; };
+		CEA0ABFD229E13DD005DB53D /* AddMealController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMealController.swift; sourceTree = "<group>"; };
+		CEA0AC00229E1C7D005DB53D /* ChefDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefDetailsViewController.swift; sourceTree = "<group>"; };
 		CEF990C2229CE6EC003B02E6 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CEF990C4229CE798003B02E6 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		CEF990C8229CFCCD003B02E6 /* newIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newIcon.png; sourceTree = "<group>"; };
@@ -156,6 +168,12 @@
 				CEFDB61522854D89001B2852 /* Meal.swift */,
 				CE7DD057229653A200453BBA /* MealTableHandler.swift */,
 				CE7DD05B2296540B00453BBA /* MealDetailsViewController.swift */,
+				CEA0ABFD229E13DD005DB53D /* AddMealController.swift */,
+				CEA0ABFC229E13DD005DB53D /* AddMealViewController.swift */,
+				CEA0ABFA229E13D3005DB53D /* ChefMealTableViewCell.swift */,
+				CEA0ABF6229E13C7005DB53D /* User.swift */,
+				CEA0ABF7229E13C7005DB53D /* UserTableHandler.swift */,
+				CEA0AC00229E1C7D005DB53D /* ChefDetailsViewController.swift */,
 			);
 			path = MealMe;
 			sourceTree = "<group>";
@@ -463,14 +481,20 @@
 			files = (
 				308E350E225AFE4B000D57EC /* ViewController.swift in Sources */,
 				CEF990C5229CE798003B02E6 /* MenuViewController.swift in Sources */,
+				CEA0ABF9229E13C7005DB53D /* UserTableHandler.swift in Sources */,
+				CEA0AC01229E1C7D005DB53D /* ChefDetailsViewController.swift in Sources */,
 				CEFDB61222852CD6001B2852 /* EaterTableViewController.swift in Sources */,
 				308E350C225AFE4B000D57EC /* AppDelegate.swift in Sources */,
 				CEFDB61622854D89001B2852 /* Meal.swift in Sources */,
 				CEF990CF229DD676003B02E6 /* ChefHamburgerViewController.swift in Sources */,
 				CE7DD058229653A200453BBA /* MealTableHandler.swift in Sources */,
 				CEF990C3229CE6EC003B02E6 /* BaseViewController.swift in Sources */,
+				CEA0ABF8229E13C7005DB53D /* User.swift in Sources */,
 				CEF990CD229DD19B003B02E6 /* ChefTableViewController.swift in Sources */,
 				CE7DD05C2296540B00453BBA /* MealDetailsViewController.swift in Sources */,
+				CEA0ABFE229E13DD005DB53D /* AddMealViewController.swift in Sources */,
+				CEA0ABFB229E13D3005DB53D /* ChefMealTableViewCell.swift in Sources */,
+				CEA0ABFF229E13DD005DB53D /* AddMealController.swift in Sources */,
 				CEFDB61422854B06001B2852 /* MealTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
