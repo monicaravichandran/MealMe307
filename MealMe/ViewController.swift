@@ -21,6 +21,8 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         super.viewDidLoad()
         
         GIDSignIn.sharedInstance().uiDelegate = self
+        
+        //let appDelegate = UIApplication.shared.delegate as! AppDelegate
          
         // TODO(developer) Configure the sign-in button look/feel
         // ...
@@ -30,6 +32,16 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let userTable = UserTableHandler()
+        if segue.identifier == "SignInSegue" {
+            let tempUser = Auth.auth().currentUser
+            userTable.addUser(user:tempUser!)
+            //userTable.getUser(key: tempUser!.uid) { (tempUser) in
+             //   eaterVC?.currUser = tempUser
+            }
+        }
+    }
     /*
     @IBAction func didTapSignOut(_ sender: Any) {
         do {
@@ -49,5 +61,5 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
     
 
 
-}
+
 
