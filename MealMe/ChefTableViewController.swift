@@ -27,8 +27,8 @@ class ChefTableViewController: BaseViewController, SlideMenuDelegate2 {
         )
     
         self.navigationController?.toolbar.items = items
-        let meal = Meal(name:"Pizza", chefEmail: "anandrajiv@gmail.com", avgRating: 4.3)
-        self.meals.append(meal)
+       // let meal = Meal(name:"Pizza", chefEmail: "anandrajiv@gmail.com", avgRating: 4.3)
+       // self.meals.append(meal)
     }
     
     override func onSlideMenuButtonPressed(_ sender: UIButton) {
