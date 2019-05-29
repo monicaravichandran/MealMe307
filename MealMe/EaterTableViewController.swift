@@ -17,6 +17,10 @@ class EaterTableViewController: BaseViewController, UISearchResultsUpdating{
     var food = [String]()
     let searchController = UISearchController(searchResultsController: nil)
     var meals = [Meal]()
+    let mealHandler = MealTableHandler()
+    let userHandler = UserTableHandler()
+    var currId : String!
+    var currUser: MealMeUser!
     
     
     override func viewDidLoad() {
@@ -35,13 +39,24 @@ class EaterTableViewController: BaseViewController, UISearchResultsUpdating{
         //]
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.rowHeight = 150
-        let handler = MealTableHandler()
-        let meal = Meal(name:"Pizza", chefEmail: "anandrajiv@gmail.com", avgRating: 4.3)
-        self.meals.append(meal)
-        handler.getMeals() { (tempMeal) in
-            self.meals += tempMeal
+        
+        let tempUser = Auth.auth().currentUser
+        currId = tempUser?.uid
+        userHandler.getUser(key: currId) { (getUser) in
+            self.currUser = getUser
+        }
+        
+        print(currUser)
+        let meal = Meal(name:"Pizza", chefId: currId, avgRating: 4.3)
+        //mealHandler.addMeal(meal: meal)
+        let meal2 = Meal(name: "Acapulco", chefId: currId, avgRating: 5.0)
+        //mealHandler.addMeal(meal: meal2)
+        mealHandler.getMeals() { (mealsArr) in
+            self.meals += mealsArr
             self.tableView.reloadData()
         }
+        
+       // self.userTable.addUser(currUser: GIDGoogleUser)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -69,7 +84,7 @@ class EaterTableViewController: BaseViewController, UISearchResultsUpdating{
         
         let meal = meals[indexPath.row]
         cell.mealName.text = meal.name
-        cell.chefName.text = meal.chefEmail
+        cell.chefName.text = currUser?.name
         cell.rating.text = String(meal.avgRating)
         return cell
     }

@@ -11,7 +11,7 @@ import UIKit
 
 struct Meal {
     let name: String
-    let chefEmail: String
+    let chefId: String
     let avgRating: Float
     // let image: UIImage
    // let description: String

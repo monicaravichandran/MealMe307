@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
     let userDefault = UserDefaults()
+    //let userTable = UserTableHandler()
+    var currUser: GIDGoogleUser?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -70,6 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                     self.userDefault.set(true, forKey: "usersignedin")
                     self.userDefault.synchronize()
                     // make sure user goes to the right window when signed in
+                    self.currUser = user
                     self.window?.rootViewController?.performSegue(withIdentifier: "SignInSegue", sender: nil)
                 }
                 else
