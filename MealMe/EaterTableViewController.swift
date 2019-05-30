@@ -47,9 +47,9 @@ class EaterTableViewController: BaseViewController, UISearchResultsUpdating{
         }
         
         print(currUser)
-        let meal = Meal(name:"Pizza", chefId: currId, avgRating: 4.3)
+        //let meal = Meal(name:"Pizza", chefId: currId, avgRating: 4.3)
         //mealHandler.addMeal(meal: meal)
-        let meal2 = Meal(name: "Acapulco", chefId: currId, avgRating: 5.0)
+        //let meal2 = Meal(name: "Acapulco", chefId: currId, avgRating: 5.0)
         //mealHandler.addMeal(meal: meal2)
         mealHandler.getMeals() { (mealsArr) in
             self.meals += mealsArr
@@ -87,7 +87,6 @@ class EaterTableViewController: BaseViewController, UISearchResultsUpdating{
         userHandler.getUser(key: meal.chefId) { (tempUser) in
             cell.chefName.text = tempUser.name
         }
-        cell.rating.text = String(meal.avgRating)
         return cell
     }
     
