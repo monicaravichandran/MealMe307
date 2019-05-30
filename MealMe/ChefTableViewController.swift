@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class ChefTableViewController: BaseViewController, SlideMenuDelegate2 {
+    let mealHandler = MealTableHandler()
     var meals = [Meal]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSlideMenuButton()
@@ -25,6 +28,10 @@ class ChefTableViewController: BaseViewController, SlideMenuDelegate2 {
         items.append(
             UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
         )
+        mealHandler.getMeals(chefId: (Auth.auth().currentUser?.uid as? String)!, completion: { (mealsArr) in
+            self.meals = mealsArr
+            self.tableView.reloadData()
+        })
     
         self.navigationController?.toolbar.items = items
        // let meal = Meal(name:"Pizza", chefEmail: "anandrajiv@gmail.com", avgRating: 4.3)
@@ -87,10 +94,13 @@ class ChefTableViewController: BaseViewController, SlideMenuDelegate2 {
         }
         
         let meal = meals[indexPath.row]
+        cell.mealId = meal.mealId
+        //print(meal.mealId)
+        //print(cell.mealId)
         cell.mealName.text = meal.name
+        cell.activeSwitch.isOn = meal.active
         return cell
     }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //selectedMeal = meals[indexPath.row]
     }
