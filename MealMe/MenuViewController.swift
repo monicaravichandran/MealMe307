@@ -49,6 +49,9 @@ class MenuViewController: UIViewController {
         })
     }
     
+    @IBAction func goToEditAccount(_ sender: Any) {
+        performSegue(withIdentifier: "goToEditAccount", sender:self)
+    }
     @IBAction func switchToChef(_ sender: Any) {
         performSegue(withIdentifier: "switchToChef", sender:self)
     }
