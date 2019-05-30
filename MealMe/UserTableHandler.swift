@@ -21,6 +21,13 @@ class UserTableHandler {
         users.child(user.uid).setValue(["name": user.displayName, "email": user.email, "phone": "N/A", "zip": 94086, "meals": [Meal]()])
     }
     
+    func updateUser(user: MealMeUser, userid: String)
+    {
+        let users = ref.child("users")
+        
+        users.child(userid).setValue(["name": user.name, "email": user.userEmail, "phone": user.phone, "zip": user.zip, "meals": user.meals])
+    }
+    
     func getUser(key : String, completion: @escaping (MealMeUser) -> Void) {
         var mealMeUser : MealMeUser?
         ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in

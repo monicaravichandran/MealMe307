@@ -49,6 +49,12 @@ class ChefHamburgerViewController: UIViewController {
         })
     }
     
+    
+    
+    @IBAction func goToEditAccount(_ sender: Any) {
+        performSegue(withIdentifier: "goToAccount", sender:self)
+    }
+    
     @IBAction func switchToEater(_ sender: Any) {
         performSegue(withIdentifier: "switchToEater", sender: self)
     }
