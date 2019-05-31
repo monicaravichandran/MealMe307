@@ -17,6 +17,7 @@ class AddMealViewController: UIViewController {
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var keywordsTextView: UITextView!
+    @IBOutlet weak var cancelButton: UIButton!
     var addedMeal:Meal?
     
     override func viewDidLoad() {
@@ -38,6 +39,9 @@ class AddMealViewController: UIViewController {
     @IBAction func priceEntered(_ sender: Any) {
     }
     
+    @IBAction func cancelClicked(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "backToChefView", sender: self)
+    }
     @IBAction func submitClicked(_ sender: UIButton) {
         print(nameTextField.text!)
         print(descriptionTextView.text!)

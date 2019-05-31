@@ -405,7 +405,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0m-S7-atz">
-                                <rect key="frame" x="0.0" y="680" width="414" height="30"/>
+                                <rect key="frame" x="0.0" y="633" width="414" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
@@ -498,11 +498,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9CD-0h-ofw">
+                                <rect key="frame" x="0.0" y="671" width="414" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelClicked:" destination="5xN-cy-rA3" eventType="touchUpInside" id="usw-Jm-OPv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="fk2-cv-iuC"/>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="9CD-0h-ofw" id="Ecq-4R-uoQ"/>
                         <outlet property="descriptionTextView" destination="akS-ng-Fi4" id="V56-IJ-EYg"/>
                         <outlet property="ingredientsEntered" destination="akS-ng-Fi4" id="V16-7F-Qdg"/>
                         <outlet property="keywordsTextView" destination="5gh-kJ-lRo" id="78m-Ic-4ED"/>
@@ -688,9 +697,8 @@
         <image name="newIcon.png" width="338" height="338"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NQe-lw-vV0"/>
+        <segue reference="421-YB-s0a"/>
         <segue reference="28P-8t-UfC"/>
-
         <segue reference="qwZ-Ae-Tru"/>
     </inferredMetricsTieBreakers>
 </document>
