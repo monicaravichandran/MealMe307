@@ -28,6 +28,7 @@ class ChefTableViewController: BaseViewController, SlideMenuDelegate2 {
         items.append(
             UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
         )
+        self.navigationItem.title = "Chef Dashboard"
         mealHandler.getMeals(chefId: (Auth.auth().currentUser?.uid as? String)!, completion: { (mealsArr) in
             self.meals = mealsArr
             self.tableView.reloadData()

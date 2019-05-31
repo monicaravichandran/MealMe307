@@ -39,7 +39,7 @@ class EaterTableViewController: BaseViewController, UISearchResultsUpdating{
         //]
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.rowHeight = 250
-        
+        self.navigationItem.title = "Eater Dashboard"
         let tempUser = Auth.auth().currentUser
         currId = tempUser?.uid
         userHandler.getUser(key: currId) { (getUser) in
