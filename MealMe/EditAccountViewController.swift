@@ -34,6 +34,11 @@ class EditAccountViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func goBackTwo() {
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 2], animated: true)
+    }
+    
     @IBAction func updateInfo(_ sender: UIButton) {
         currId = self.tempUser.uid
         userHandler.getUser(key: currId, completion: { (mealmeUser) in
@@ -43,6 +48,7 @@ class EditAccountViewController: UIViewController {
             self.userHandler.updateUser(user: updatedUser, userid: self.currId)
         
         })
+        goBackTwo()
     }
     
     /*
