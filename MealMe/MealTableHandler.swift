@@ -42,6 +42,34 @@ class MealTableHandler {
         
     }
     
+    func getMeals(keyword: String, completion: @escaping ([Meal]) -> Void) {
+        var meals = [Meal]()
+        ref.child("meals").observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            if let dict = snapshot.value as? [String:Any?] {
+                for item in dict {
+                    if let val = item.value as? NSDictionary {
+                        let name = val["name"] as! String
+                        if(val["active"] as? Bool == true && keyword.lowercased() == name.lowercased()){
+                            let meal = Meal(mealId: val["mealId"] as? String ?? "", name: val["name"] as? String ?? "", chefId: val["chefId"] as? String ?? "",  description: val["description"] as? String ?? "", ingredients: [val["ingredients"] as? String ?? ""], time: val["time"] as? String ?? "", servingSize: val["servingSize"] as? Int ?? 0, price: val["price"] as? Float ?? 0.0, keywords: val["keywords"] as? String ?? "", active: val["active"] as? Bool ?? false)
+                            meals.append(meal)
+                        }
+                    }
+                    
+                }
+            }
+            
+            completion(meals)
+            
+            // ...
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+    }
+    
+    
+    
     func getMeals(chefId: String, completion: @escaping ([Meal]) -> Void) {
         var meals = [Meal]()
         ref.child("meals").observeSingleEvent(of: .value, with: { (snapshot) in

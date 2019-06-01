@@ -35,6 +35,7 @@
 		CEFDB61422854B06001B2852 /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDB61322854B06001B2852 /* MealTableViewCell.swift */; };
 		CEFDB61622854D89001B2852 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDB61522854D89001B2852 /* Meal.swift */; };
 		ECB68757E0ECCFCAB22EAA3F /* Pods_MealMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46E3AC1E7BB0BA68FA0F880 /* Pods_MealMe.framework */; };
+		F51A186E22A24630009EBE0C /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A186D22A24630009EBE0C /* Search.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		CEFDB61322854B06001B2852 /* MealTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
 		CEFDB61522854D89001B2852 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		DE210542A90C3E1E91A15CB6 /* Pods-MealMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealMe.debug.xcconfig"; path = "Target Support Files/Pods-MealMe/Pods-MealMe.debug.xcconfig"; sourceTree = "<group>"; };
+		F51A186D22A24630009EBE0C /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 				CEA0ABF6229E13C7005DB53D /* User.swift */,
 				CEA0ABF7229E13C7005DB53D /* UserTableHandler.swift */,
 				CEA0AC00229E1C7D005DB53D /* ChefDetailsViewController.swift */,
+				F51A186D22A24630009EBE0C /* Search.swift */,
 			);
 			path = MealMe;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				308E350C225AFE4B000D57EC /* AppDelegate.swift in Sources */,
 				CEFDB61622854D89001B2852 /* Meal.swift in Sources */,
 				CEF990CF229DD676003B02E6 /* ChefHamburgerViewController.swift in Sources */,
+				F51A186E22A24630009EBE0C /* Search.swift in Sources */,
 				CE7DD058229653A200453BBA /* MealTableHandler.swift in Sources */,
 				CEF990C3229CE6EC003B02E6 /* BaseViewController.swift in Sources */,
 				CEA0ABF8229E13C7005DB53D /* User.swift in Sources */,

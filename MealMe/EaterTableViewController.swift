@@ -26,6 +26,8 @@ class EaterTableViewController: BaseViewController, UISearchResultsUpdating{
     override func viewDidLoad() {
         super.viewDidLoad()
         addSlideMenuButton()
+        let search = Search()
+        search.searchByKeywords()
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "Search for meals"
         navigationItem.searchController = searchController

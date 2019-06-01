@@ -50,7 +50,9 @@ class UserTableHandler {
                         meals.append(meal)*/
                 }
                 if(exists == 1){
-                    completion(mealMeUser!)
+                    DispatchQueue.main.async {
+                        completion(mealMeUser!)
+                    }
                 }
                 else{
                     let nilUser = MealMeUser(name: "NilUser", userEmail: "NIL", zip: 0, phone: "NIL", meals: [])
