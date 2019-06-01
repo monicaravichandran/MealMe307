@@ -22,7 +22,11 @@ class AddMealViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.setHidesBackButton(true, animated: true)
+        let backButton = UIBarButtonItem()
+        backButton.title = "Cancel"
+    self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        //self.navigationItem.setHidesBackButton(true, animated: true)
+        //self.navigationItem.backBarButtonItem
         // Do any additional setup after loading the view.
         
     }
@@ -39,9 +43,6 @@ class AddMealViewController: UIViewController {
     @IBAction func priceEntered(_ sender: Any) {
     }
     
-    @IBAction func cancelClicked(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "backToChefView", sender: self)
-    }
     @IBAction func submitClicked(_ sender: UIButton) {
         print(nameTextField.text!)
         print(descriptionTextView.text!)
@@ -67,6 +68,7 @@ class AddMealViewController: UIViewController {
             self.performSegue(withIdentifier: "backToChefView", sender: self)
         }
     }
+    
     /*
     // MARK: - Navigation
 
