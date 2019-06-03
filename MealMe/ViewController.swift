@@ -36,6 +36,7 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         let userTable = UserTableHandler()
         if segue.identifier == "SignInSegue" {
             let tempUser = Auth.auth().currentUser
+            //userTable.addUser(user:tempUser!)
             userTable.getUser(key: tempUser!.uid, completion: { (mealMeUser) in
                 if(mealMeUser.name == "NilUser"){ // user does not exists and it is his first time logging in
                     userTable.addUser(user:tempUser!)
