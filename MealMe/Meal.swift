@@ -13,6 +13,7 @@ struct Meal {
     let mealId: String
     let name: String
     let chefId: String
+    let zipcode: String
     // let image: UIImage
     let description: String
     let ingredients: [String]

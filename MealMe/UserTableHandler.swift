@@ -39,7 +39,7 @@ class UserTableHandler {
                     if item.key == key {
                         exists = 1
                         if let val = item.value as? NSDictionary{
-                            let curUser = MealMeUser(name: val["name"] as? String ?? "", userEmail: val["chefId"] as? String ?? "", zip: val["zip"] as? Int ?? 0, phone: val["phone"] as? String ?? "", meals: val["meals"] as?  [String] ?? [])
+                            let curUser = MealMeUser(name: val["name"] as? String ?? "", userEmail: val["chefId"] as? String ?? "", zip: val["zip"] as? String ?? "", phone: val["phone"] as? String ?? "", meals: val["meals"] as?  [String] ?? [])
                             mealMeUser = curUser
                         }
                     }
@@ -55,7 +55,7 @@ class UserTableHandler {
                     }
                 }
                 else{
-                    let nilUser = MealMeUser(name: "NilUser", userEmail: "NIL", zip: 0, phone: "NIL", meals: [])
+                    let nilUser = MealMeUser(name: "NilUser", userEmail: "NIL", zip: "", phone: "NIL", meals: [])
                     completion(nilUser)
                 }
             }

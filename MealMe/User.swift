@@ -13,7 +13,7 @@ import UIKit
 struct MealMeUser {
     let name: String
     let userEmail: String
-    let zip: Int
+    let zip: String
     let phone: String
     let meals: [String]
     // let image: UIImage

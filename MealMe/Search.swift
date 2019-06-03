@@ -15,37 +15,31 @@ class Search{
     let ref = Database.database().reference()
     //let zipcode:String?
     
-    func searchByKeywords(keyword: String) -> [Meal]{
+    func searchByKeywords(keyword: String, completion: @escaping ([Meal]) -> Void ){
         
         let userHandler = UserTableHandler()
         let mealHandler = MealTableHandler()
         let id = Auth.auth().currentUser?.uid
-        var zipcode = 0
-        let dispatch = DispatchGroup()
+        var zipcode = ""
+      //  let dispatch = DispatchGroup()
         var meals = [Meal]()
 
-        dispatch.enter()
-        DispatchQueue.main.async {
+       // dispatch.enter()
+      //  DispatchQueue.main.async {
             
-            //userHandler.getUser(key: id!) { (myUser) in
-            //    zipcode = myUser.zip
-            //    dispatch.leave()
-            //}
-            mealHandler.getMeals(keyword: keyword, completion: { (mealsArr) in
-                meals = mealsArr
-            })
+            userHandler.getUser(key: id!) { (myUser) in
+                zipcode = myUser.zip
+                mealHandler.getMeals(zipcode:zipcode,keyword: keyword, completion: completion)
+            }
+           
             
-        }
+       // }
         
-        dispatch.notify(queue: .main) {
-            return meals
+       // dispatch.notify(queue: .main) {
+       //     return meals
             
-        }
+       // }
         
-        
-        
-        
-        return []
     }
     func searchHelper(zipcode:Int){
         var postal_codes = [Int]()
