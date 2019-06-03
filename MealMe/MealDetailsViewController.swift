@@ -21,12 +21,43 @@ class MealDetailsViewController: UIViewController {
         let userHandler = UserTableHandler()
         
         userHandler.getUser(key: self.meal?.chefId as? String ?? "") { (tempUser) in
+            print("HEY HERE")
+            print(tempUser.name)
             self.ChefNameButton.titleLabel?.text = tempUser.name
         }
         mealName.text = meal?.name
         
         // Do any additional setup after loading the view.
     }
+ 
+    
+    /*func viewDidLoadBack(curChefID: String, curMeal: Meal, completion: @escaping (MealMeUser) -> Void) {
+        super.viewDidLoad()
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Meal Details", style: .plain, target: nil, action: nil)
+        let userHandler = UserTableHandler()
+        
+        userHandler.getUser(key: curChefID as? String ?? "") { (tempUser) in
+            print("HEY HERE")
+            print(tempUser.name)
+            self.ChefNameButton.titleLabel?.text = tempUser.name
+        }
+
+        print("VIEW DID LOAD BACK")
+        print(curMeal.name)
+        mealName.text = curMeal.name
+        
+        var mealMeUserHolder : MealMeUser?
+        let curUser = MealMeUser(name: "NA", userEmail: "NA", zip: -1, phone: "NA", meals: ["NA"])
+        mealMeUserHolder = curUser
+        completion(mealMeUserHolder!)
+        
+        // Do any additional setup after loading the view.
+    } */
+    
+    
+    
+    
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
@@ -34,6 +65,9 @@ class MealDetailsViewController: UIViewController {
         if segue.identifier == "showChefDetails" {
             let chefDetailsVC = segue.destination as? ChefDetailsViewController
             chefDetailsVC?.chefId = meal?.chefId
+            chefDetailsVC?.meal = self.meal
+            print("MEAL HERE")
+            print(self.meal?.name)
         }
     }
     
