@@ -75,7 +75,7 @@ class AddMealViewController: UIViewController {
                 userHandler.addMealToChef(chef: mealMeUser, chefid: tempUser!.uid, mealid: self.addedMeal!.mealId)
                 })
             
-            
+            self.performSegue(withIdentifier: "backToChefView", sender: self)
         }
     }
     

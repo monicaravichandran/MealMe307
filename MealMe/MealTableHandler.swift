@@ -71,4 +71,10 @@ class MealTableHandler {
         let meals = ref.child("meals")
         meals.child(mealID).updateChildValues(["active" : activeStatus])
     }
+    
+    func deleteMeals(mealID:String) {
+        let meals = ref.child("meals")
+        
+        meals.child(mealID).removeValue()
+    }
 }

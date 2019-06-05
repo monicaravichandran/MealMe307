@@ -25,6 +25,13 @@
 		CEA0ABFE229E13DD005DB53D /* AddMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0ABFC229E13DD005DB53D /* AddMealViewController.swift */; };
 		CEA0AC01229E1C7D005DB53D /* ChefDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0AC00229E1C7D005DB53D /* ChefDetailsViewController.swift */; };
 		CEA0AC03229F68BF005DB53D /* EditAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0AC02229F68BF005DB53D /* EditAccountViewController.swift */; };
+		CEA0AC0722A75236005DB53D /* ReviewTableHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0AC0422A75232005DB53D /* ReviewTableHandler.swift */; };
+		CEA0AC0B22A7523C005DB53D /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0AC0A22A7523B005DB53D /* Review.swift */; };
+		CEA0AC0F22A7524A005DB53D /* AddMealController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0AC0E22A7524A005DB53D /* AddMealController.swift */; };
+		CEA0AC1322A86A1C005DB53D /* ReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0AC1222A86A1C005DB53D /* ReviewsViewController.swift */; };
+		CEA0AC1522A86EB9005DB53D /* ReviewDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0AC1422A86EB9005DB53D /* ReviewDetailsViewController.swift */; };
+		CEA0AC1722A8707A005DB53D /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0AC1622A8707A005DB53D /* Review.swift */; };
+		CEA0AC1922A8724E005DB53D /* ReviewViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0AC1822A8724E005DB53D /* ReviewViewCell.swift */; };
 		CEF990C3229CE6EC003B02E6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF990C2229CE6EC003B02E6 /* BaseViewController.swift */; };
 		CEF990C5229CE798003B02E6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF990C4229CE798003B02E6 /* MenuViewController.swift */; };
 		CEF990C9229CFCCD003B02E6 /* newIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF990C8229CFCCD003B02E6 /* newIcon.png */; };
@@ -85,6 +92,13 @@
 		CEA0ABFC229E13DD005DB53D /* AddMealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMealViewController.swift; sourceTree = "<group>"; };
 		CEA0AC00229E1C7D005DB53D /* ChefDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefDetailsViewController.swift; sourceTree = "<group>"; };
 		CEA0AC02229F68BF005DB53D /* EditAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountViewController.swift; sourceTree = "<group>"; };
+		CEA0AC0422A75232005DB53D /* ReviewTableHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableHandler.swift; sourceTree = "<group>"; };
+		CEA0AC0A22A7523B005DB53D /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		CEA0AC0E22A7524A005DB53D /* AddMealController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMealController.swift; sourceTree = "<group>"; };
+		CEA0AC1222A86A1C005DB53D /* ReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsViewController.swift; sourceTree = "<group>"; };
+		CEA0AC1422A86EB9005DB53D /* ReviewDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailsViewController.swift; sourceTree = "<group>"; };
+		CEA0AC1622A8707A005DB53D /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		CEA0AC1822A8724E005DB53D /* ReviewViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewCell.swift; sourceTree = "<group>"; };
 		CEF990C2229CE6EC003B02E6 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CEF990C4229CE798003B02E6 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		CEF990C8229CFCCD003B02E6 /* newIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newIcon.png; sourceTree = "<group>"; };
@@ -156,8 +170,13 @@
 				CEFDB61122852CD6001B2852 /* EaterTableViewController.swift */,
 				308E3539225AFEF2000D57EC /* GoogleService-Info.plist */,
 				308E350B225AFE4B000D57EC /* AppDelegate.swift */,
+				CEA0AC1622A8707A005DB53D /* Review.swift */,
 				308E350D225AFE4B000D57EC /* ViewController.swift */,
 				308E350F225AFE4B000D57EC /* Main.storyboard */,
+				CEA0AC1222A86A1C005DB53D /* ReviewsViewController.swift */,
+				CEA0AC0E22A7524A005DB53D /* AddMealController.swift */,
+				CEA0AC0A22A7523B005DB53D /* Review.swift */,
+				CEA0AC0422A75232005DB53D /* ReviewTableHandler.swift */,
 				CEA0AC02229F68BF005DB53D /* EditAccountViewController.swift */,
 				CEF990CE229DD676003B02E6 /* ChefHamburgerViewController.swift */,
 				CEF990CC229DD19B003B02E6 /* ChefTableViewController.swift */,
@@ -174,6 +193,8 @@
 				CEA0ABF6229E13C7005DB53D /* User.swift */,
 				CEA0ABF7229E13C7005DB53D /* UserTableHandler.swift */,
 				CEA0AC00229E1C7D005DB53D /* ChefDetailsViewController.swift */,
+				CEA0AC1422A86EB9005DB53D /* ReviewDetailsViewController.swift */,
+				CEA0AC1822A8724E005DB53D /* ReviewViewCell.swift */,
 			);
 			path = MealMe;
 			sourceTree = "<group>";
@@ -480,19 +501,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA0AC03229F68BF005DB53D /* EditAccountViewController.swift in Sources */,
+				CEA0AC0722A75236005DB53D /* ReviewTableHandler.swift in Sources */,
+				CEA0AC0B22A7523C005DB53D /* Review.swift in Sources */,
 				308E350E225AFE4B000D57EC /* ViewController.swift in Sources */,
+				CEA0AC1922A8724E005DB53D /* ReviewViewCell.swift in Sources */,
 				CEF990C5229CE798003B02E6 /* MenuViewController.swift in Sources */,
 				CEA0ABF9229E13C7005DB53D /* UserTableHandler.swift in Sources */,
 				CEA0AC01229E1C7D005DB53D /* ChefDetailsViewController.swift in Sources */,
+				CEA0AC1722A8707A005DB53D /* Review.swift in Sources */,
+				CEA0AC0F22A7524A005DB53D /* AddMealController.swift in Sources */,
 				CEFDB61222852CD6001B2852 /* EaterTableViewController.swift in Sources */,
 				308E350C225AFE4B000D57EC /* AppDelegate.swift in Sources */,
 				CEFDB61622854D89001B2852 /* Meal.swift in Sources */,
 				CEF990CF229DD676003B02E6 /* ChefHamburgerViewController.swift in Sources */,
 				CE7DD058229653A200453BBA /* MealTableHandler.swift in Sources */,
 				CEF990C3229CE6EC003B02E6 /* BaseViewController.swift in Sources */,
+				CEA0AC1522A86EB9005DB53D /* ReviewDetailsViewController.swift in Sources */,
 				CEA0ABF8229E13C7005DB53D /* User.swift in Sources */,
 				CEF990CD229DD19B003B02E6 /* ChefTableViewController.swift in Sources */,
 				CE7DD05C2296540B00453BBA /* MealDetailsViewController.swift in Sources */,
+				CEA0AC1322A86A1C005DB53D /* ReviewsViewController.swift in Sources */,
 				CEA0ABFE229E13DD005DB53D /* AddMealViewController.swift in Sources */,
 				CEA0ABFB229E13D3005DB53D /* ChefMealTableViewCell.swift in Sources */,
 				CEFDB61422854B06001B2852 /* MealTableViewCell.swift in Sources */,
