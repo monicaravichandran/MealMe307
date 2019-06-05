@@ -16,6 +16,7 @@ struct MealMeUser {
     let zip: String
     let phone: String
     let meals: [String]
+    let reviews: [String]
     // let image: UIImage
     // let description: String
     // let ingredients: [String]

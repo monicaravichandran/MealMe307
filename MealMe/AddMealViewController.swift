@@ -66,6 +66,7 @@ class AddMealViewController: UIViewController {
                 self.addedMeal = Meal(mealId: id, name: self.nameTextField.text ?? "", chefId: Auth.auth().currentUser?.uid ?? "", zipcode: user.zip as? String ?? "", description: self.descriptionTextView.text ?? "", ingredients: ingredientsList ?? [] , time: self.timeTextField.text ?? "", servingSize: self.servingTextField.text as? Int ?? 0, price: self.priceTextField.text as? Float ?? 0.0, keywords: self.keywordsTextView.text ?? "", active: true)
                 let mealHandler = MealTableHandler()
                 mealHandler.addMeal(meal: self.addedMeal!)
+                userTableHandler.addMealToChef(chef: user, chefid: Auth.auth().currentUser?.uid ?? "", mealid: self.addedMeal!.mealId)
                 print("segueing")
                 self.performSegue(withIdentifier: "backToChefView", sender: self)
             }

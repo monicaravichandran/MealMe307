@@ -34,15 +34,21 @@ class EditAccountViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func goBackTwo() {
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 2], animated: true)
+    }
+    
     @IBAction func updateInfo(_ sender: UIButton) {
         currId = self.tempUser.uid
         userHandler.getUser(key: currId, completion: { (mealmeUser) in
-        var updatedUser =
-            MealMeUser(name: self.nameField.text!, userEmail: self.tempUser.email!, zip: self.zipcodeField.text! as? String ?? "", phone: self.phoneField.text!, meals: mealmeUser.meals)
+        let updatedUser =
+            MealMeUser(name: self.nameField.text!, userEmail: self.tempUser.email!, zip: self.zipcodeField.text! as? String ?? "", phone: self.phoneField.text!, meals: mealmeUser.meals, reviews: mealmeUser.reviews)
         
             self.userHandler.updateUser(user: updatedUser, userid: self.currId)
         
         })
+        goBackTwo()
     }
     
     /*
