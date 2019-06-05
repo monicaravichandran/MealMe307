@@ -42,8 +42,8 @@ class EditAccountViewController: UIViewController {
     @IBAction func updateInfo(_ sender: UIButton) {
         currId = self.tempUser.uid
         userHandler.getUser(key: currId, completion: { (mealmeUser) in
-        var updatedUser =
-            MealMeUser(name: self.nameField.text!, userEmail: self.tempUser.email!, zip: Int(self.zipcodeField.text!) as? Int ?? 0, phone: self.phoneField.text!, meals: mealmeUser.meals, reviews: mealmeUser.reviews)
+        let updatedUser =
+            MealMeUser(name: self.nameField.text!, userEmail: self.tempUser.email!, zip: self.zipcodeField.text! as? String ?? "", phone: self.phoneField.text!, meals: mealmeUser.meals, reviews: mealmeUser.reviews)
         
             self.userHandler.updateUser(user: updatedUser, userid: self.currId)
         

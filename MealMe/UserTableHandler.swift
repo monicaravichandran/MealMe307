@@ -18,8 +18,7 @@ class UserTableHandler {
     func addUser(user: User)
     {
         let users = ref.child("users")
-        users.child(user.uid).setValue(["name": user.displayName, "email": user.email, "phone": "N/A", "zip": 94086, "meals": [Meal](),
-                                        "reviews": [Review]()])
+        users.child(user.uid).setValue(["name": user.displayName, "email": user.email, "phone": "N/A", "zip": 94086, "meals": [Meal](),"reviews": [Review]()])
     }
 
     
@@ -41,7 +40,8 @@ class UserTableHandler {
                     if item.key == key {
                         exists = 1
                         if let val = item.value as? NSDictionary{
-                            let curUser = MealMeUser(name: val["name"] as? String ?? "", userEmail: val["email"] as? String ?? "", zip: val["zip"] as? Int ?? 0, phone: val["phone"] as? String ?? "", meals: val["meals"] as?  [String] ?? [], reviews: val["reviews"] as?  [String] ?? [])
+                            let curUser = MealMeUser(name: val["name"] as? String ?? "", userEmail: val["chefId"] as? String ?? "", zip: val["zip"] as? String ?? "", phone: val["phone"] as? String ?? "", meals: val["meals"] as?  [String] ?? [], reviews: val["reviews"] as? [String] ?? [])
+
                             mealMeUser = curUser
                         }
                     }
@@ -52,10 +52,13 @@ class UserTableHandler {
                         meals.append(meal)*/
                 }
                 if(exists == 1){
-                    completion(mealMeUser!)
+                    DispatchQueue.main.async {
+                        completion(mealMeUser!)
+                    }
                 }
                 else{
-                    let nilUser = MealMeUser(name: "NilUser", userEmail: "NIL", zip: 0, phone: "NIL", meals: [], reviews: [])
+                    let nilUser = MealMeUser(name: "NilUser", userEmail: "NIL", zip: "", phone: "NIL", meals: [], reviews: [])
+
                     completion(nilUser)
                 }
             }

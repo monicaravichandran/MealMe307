@@ -10,25 +10,31 @@ import UIKit
 import Firebase
 import GoogleSignIn
 
-class EaterTableViewController: BaseViewController, UISearchResultsUpdating{
+class EaterTableViewController: BaseViewController, UISearchResultsUpdating, UISearchBarDelegate{
 
    
     
     var food = [String]()
     let searchController = UISearchController(searchResultsController: nil)
     var meals = [Meal]()
+    var filteredMeals = [Meal]()
     let mealHandler = MealTableHandler()
     let userHandler = UserTableHandler()
     var currId : String!
     var currUser: MealMeUser!
-    
+    var filtered: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addSlideMenuButton()
+        let search = Search()
+        //search.searchByKeywords(keyword: "hello", completion: //)
         searchController.searchResultsUpdater = self
-        searchController.searchBar.placeholder = "Search for meals"
+        searchController.searchBar.delegate = self
         navigationItem.searchController = searchController
+        //searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search for meals"
+        //searchController.hidesNavigationBarDuringPresentation = false
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Meals", style: .plain, target: nil, action: nil)
         //self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MealTableViewCell")
         //meals = [
@@ -74,6 +80,10 @@ class EaterTableViewController: BaseViewController, UISearchResultsUpdating{
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if isFiltering() {
+            return filteredMeals.count
+        }
+        
         return meals.count
     }
     
@@ -82,7 +92,16 @@ class EaterTableViewController: BaseViewController, UISearchResultsUpdating{
             fatalError("Could not cast")
         }
         
-        let meal = meals[indexPath.row]
+        
+        //let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let meal: Meal
+        
+        if isFiltering() {
+            meal = filteredMeals[indexPath.row]
+        } else {
+            meal = meals[indexPath.row]
+        }
+        
         cell.mealName.text = meal.name
         userHandler.getUser(key: meal.chefId) { (tempUser) in
             cell.chefName.text = tempUser.name
@@ -93,19 +112,65 @@ class EaterTableViewController: BaseViewController, UISearchResultsUpdating{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //selectedMeal = meals[indexPath.row]
     }
-    
+    func isFiltering() -> Bool {
+        return searchController.isActive && !searchBarIsEmpty()
+    }
     func updateSearchResults(for searchController: UISearchController) {
+        let search = Search()
+        //filterContentForSearchText(searchController.searchBar.text!)
+        search.searchByKeywords(keyword: searchController.searchBar.text!) { (newMeals) in
+            if(!newMeals.isEmpty){
+                self.meals = newMeals
+                self.filteredMeals = newMeals
+            }
+        }
         
+        print("tb",filteredMeals)
+        tableView.reloadData()
+    }
+    /*func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        let search = Search()
+        filterContentForSearchText(searchBar.text!)
+        search.searchByKeywords(keyword: searchBar.text!) { (newMeals) in
+            if(!newMeals.isEmpty){
+                self.meals = newMeals
+                self.filteredMeals = newMeals
+            }
+        }
+        
+        print("tb",filteredMeals)
+        tableView.reloadData()
+        
+    }*/
+    
+    func searchBarIsEmpty() -> Bool {
+        // Returns true if the text is empty or nil
+        return searchController.searchBar.text?.isEmpty ?? true
     }
     
-    
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+        filteredMeals = meals.filter({( meal : Meal) -> Bool in
+            return meal.name.lowercased().contains(searchText.lowercased())
+        })
+        
+        tableView.reloadData()
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        //var newMeals = meals
+        let selectedMeal:Meal
+        let path = self.tableView.indexPathForSelectedRow
+        if(!filteredMeals.isEmpty){
+            print("filtering")
+            selectedMeal = filteredMeals[path!.row]
+            //print(newMeals)
+        }
+        else{
+            selectedMeal = meals[path!.row]
+        }
         if segue.identifier == "detailsSegue" {
-            let path = self.tableView.indexPathForSelectedRow
-            let selectedMeal = meals[path!.row]
             let detailsVC = segue.destination as? MealDetailsViewController
             detailsVC?.meal = selectedMeal
         }
