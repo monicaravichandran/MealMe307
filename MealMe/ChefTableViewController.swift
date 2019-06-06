@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class ChefTableViewController: BaseViewController, SlideMenuDelegate2 {
+class ChefTableViewController: BaseViewController, SlideMenuDelegate2,deleteCellUpdater {
     let mealHandler = MealTableHandler()
     var meals = [Meal]()
     
@@ -80,6 +80,21 @@ class ChefTableViewController: BaseViewController, SlideMenuDelegate2 {
             sender.isEnabled = true
         }, completion:nil)
     }
+    func updateTableView(mealId:String){
+        let alert = UIAlertController(title: "Are you sure you want to delete this meal?", message:nil, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+            let handler = MealTableHandler()
+            handler.deleteMeals(mealID: mealId)
+            handler.getMeals(chefId: (Auth.auth().currentUser?.uid as? String)!, completion: { (mealsArr) in
+                self.meals = mealsArr
+                self.tableView.reloadData()
+            })
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
+        
+    }
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -100,6 +115,7 @@ class ChefTableViewController: BaseViewController, SlideMenuDelegate2 {
         //print(cell.mealId)
         cell.mealName.text = meal.name
         cell.activeSwitch.isOn = meal.active
+        cell.delegate = self
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

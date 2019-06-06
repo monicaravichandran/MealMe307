@@ -426,21 +426,25 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zuW-JL-7G6">
-                                            <rect key="frame" x="333" y="38" width="49" height="31"/>
+                                            <rect key="frame" x="312" y="38" width="49" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <connections>
                                                 <action selector="toggleActiveMeal:" destination="k6T-Gb-58p" eventType="valueChanged" id="zLI-cu-1NA"/>
                                             </connections>
                                         </switch>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0B-Xc-dZI">
-                                            <rect key="frame" x="334" y="103" width="45" height="30"/>
+                                            <rect key="frame" x="253" y="101" width="165" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Delete"/>
+                                            <connections>
+                                                <action selector="deleteClicked:" destination="k6T-Gb-58p" eventType="touchUpInside" id="Fio-l8-mXi"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="activeSwitch" destination="zuW-JL-7G6" id="kgE-1D-t9r"/>
+                                    <outlet property="deleteButton" destination="s0B-Xc-dZI" id="Gql-ds-YK3"/>
                                     <outlet property="mealName" destination="peo-SR-rcv" id="7j2-Mv-xGg"/>
                                     <segue destination="5xN-cy-rA3" kind="show" identifier="editMealSegue" id="Dy2-0W-LPS"/>
                                 </connections>
