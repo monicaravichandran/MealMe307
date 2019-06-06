@@ -31,10 +31,14 @@ class EaterTableViewController: BaseViewController, UISearchResultsUpdating, UIS
         //search.searchByKeywords(keyword: "hello", completion: //)
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
-        navigationItem.searchController = searchController
+        
         //searchController.obscuresBackgroundDuringPresentation = false
         //searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search for meals"
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.scopeButtonTitles = ["None", "Price", "Rating"]
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
         //searchController.hidesNavigationBarDuringPresentation = false
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Meals", style: .plain, target: nil, action: nil)
         //self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MealTableViewCell")
@@ -125,6 +129,7 @@ class EaterTableViewController: BaseViewController, UISearchResultsUpdating, UIS
         return searchController.isActive && !searchBarIsEmpty()
     }
     func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
         let search = Search()
         //filterContentForSearchText(searchController.searchBar.text!)
         search.searchByKeywords(keyword: searchController.searchBar.text!) { (newMeals) in
@@ -171,18 +176,25 @@ class EaterTableViewController: BaseViewController, UISearchResultsUpdating, UIS
         //var newMeals = meals
         let selectedMeal:Meal
         let path = self.tableView.indexPathForSelectedRow
-        if(!filteredMeals.isEmpty){
-            print("filtering")
-            selectedMeal = filteredMeals[path!.row]
+        //if(!filteredMeals.isEmpty){
+          //  print("filtering")
+           // selectedMeal = filteredMeals[path!.row]
             //print(newMeals)
-        }
-        else{
+        //}
+        //else{
+           // selectedMeal = meals[path!.row]
+        //}
+        if isFiltering() {
+            selectedMeal = filteredMeals[path!.row]
+        } else {
             selectedMeal = meals[path!.row]
         }
         if segue.identifier == "detailsSegue" {
             let detailsVC = segue.destination as? MealDetailsViewController
             detailsVC?.meal = selectedMeal
+            detailsVC?.navigationItem.leftItemsSupplementBackButton = true
         }
+        
     }
 
     /*

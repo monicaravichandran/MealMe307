@@ -27,7 +27,6 @@
 		CEA0AC03229F68BF005DB53D /* EditAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0AC02229F68BF005DB53D /* EditAccountViewController.swift */; };
 		CEA0AC0722A75236005DB53D /* ReviewTableHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0AC0422A75232005DB53D /* ReviewTableHandler.swift */; };
 		CEA0AC0B22A7523C005DB53D /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0AC0A22A7523B005DB53D /* Review.swift */; };
-		CEA0AC0F22A7524A005DB53D /* AddMealController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0AC0E22A7524A005DB53D /* AddMealController.swift */; };
 		CEA0AC1322A86A1C005DB53D /* ReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0AC1222A86A1C005DB53D /* ReviewsViewController.swift */; };
 		CEA0AC1522A86EB9005DB53D /* ReviewDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0AC1422A86EB9005DB53D /* ReviewDetailsViewController.swift */; };
 		CEA0AC1722A8707A005DB53D /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0AC1622A8707A005DB53D /* Review.swift */; };
@@ -95,7 +94,6 @@
 		CEA0AC02229F68BF005DB53D /* EditAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountViewController.swift; sourceTree = "<group>"; };
 		CEA0AC0422A75232005DB53D /* ReviewTableHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableHandler.swift; sourceTree = "<group>"; };
 		CEA0AC0A22A7523B005DB53D /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
-		CEA0AC0E22A7524A005DB53D /* AddMealController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMealController.swift; sourceTree = "<group>"; };
 		CEA0AC1222A86A1C005DB53D /* ReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsViewController.swift; sourceTree = "<group>"; };
 		CEA0AC1422A86EB9005DB53D /* ReviewDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailsViewController.swift; sourceTree = "<group>"; };
 		CEA0AC1622A8707A005DB53D /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
@@ -176,7 +174,6 @@
 				308E350D225AFE4B000D57EC /* ViewController.swift */,
 				308E350F225AFE4B000D57EC /* Main.storyboard */,
 				CEA0AC1222A86A1C005DB53D /* ReviewsViewController.swift */,
-				CEA0AC0E22A7524A005DB53D /* AddMealController.swift */,
 				CEA0AC0A22A7523B005DB53D /* Review.swift */,
 				CEA0AC0422A75232005DB53D /* ReviewTableHandler.swift */,
 				CEA0AC02229F68BF005DB53D /* EditAccountViewController.swift */,
@@ -512,7 +509,6 @@
 				CEA0ABF9229E13C7005DB53D /* UserTableHandler.swift in Sources */,
 				CEA0AC01229E1C7D005DB53D /* ChefDetailsViewController.swift in Sources */,
 				CEA0AC1722A8707A005DB53D /* Review.swift in Sources */,
-				CEA0AC0F22A7524A005DB53D /* AddMealController.swift in Sources */,
 				CEFDB61222852CD6001B2852 /* EaterTableViewController.swift in Sources */,
 				308E350C225AFE4B000D57EC /* AppDelegate.swift in Sources */,
 				CEFDB61622854D89001B2852 /* Meal.swift in Sources */,
@@ -704,13 +700,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2S984Y9892;
+				DEVELOPMENT_TEAM = J97MKHXHWF;
 				INFOPLIST_FILE = MealMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.karma.MealMe307;
+				PRODUCT_BUNDLE_IDENTIFIER = com.karma.MealMe123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -723,13 +719,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2S984Y9892;
+				DEVELOPMENT_TEAM = J97MKHXHWF;
 				INFOPLIST_FILE = MealMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.karma.MealMe307;
+				PRODUCT_BUNDLE_IDENTIFIER = com.karma.MealMe123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
