@@ -39,9 +39,9 @@ class ReviewsViewController: UITableViewController {
         }
         
         let review = reviews[indexPath.row]
-        cell.eaterName.text = review.eaterName
-        cell.rating.text = String(format: "%.2f",review.rating)
-        cell.review.text = review.text
+        cell.eaterName.text = "Name:" + review.eaterName
+        cell.rating.text = String(format: "Rating: %.2f",review.rating)
+        cell.review.text = "Review: " + review.text
         
         return cell
     }

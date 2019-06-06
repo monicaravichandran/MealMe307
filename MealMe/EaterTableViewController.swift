@@ -102,13 +102,13 @@ class EaterTableViewController: BaseViewController, UISearchResultsUpdating, UIS
         //let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let meal = meals[indexPath.row]
         
-        cell.mealName.text = meal.name
+        cell.mealName.text = "Meal: " + meal.name
         userHandler.getUser(key: meal.chefId) { (tempUser) in
-            cell.chefName.text = tempUser.name
+            cell.chefName.text = "Name: " + tempUser.name
             if tempUser.numReviews == 0 {
                 cell.rating.text = "No rating available"
             } else {
-            cell.rating.text = String(format: "%.2f", tempUser.totalRating / Float(tempUser.numReviews))
+                cell.rating.text = String(format: "Average Rating: %.2f", tempUser.totalRating / Float(tempUser.numReviews))
         
             }
         }

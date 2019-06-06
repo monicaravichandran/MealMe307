@@ -20,9 +20,9 @@ class ReviewDetailsViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        eaterName.text = review?.eaterName
-        rating.text = String(format: "%.2f",(review?.rating)!)
-        reviewText.text = review?.text
+        eaterName.text = "User: " + review!.eaterName
+        rating.text = String(format: "Rating: %.2f",(review?.rating)!)
+        reviewText.text = "Review: " + review!.text
         eaterName.sizeToFit()
         rating.sizeToFit()
         reviewText.numberOfLines = 10
