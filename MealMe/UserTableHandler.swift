@@ -34,7 +34,6 @@ class UserTableHandler {
         var exists = 0
         ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
-            print(snapshot)
             if let dict = snapshot.value as? [String:Any?] {
                 for item in dict {
                     if item.key == key {
