@@ -25,7 +25,7 @@ class MealTableHandler {
                 for item in dict {
                     if let val = item.value as? NSDictionary {
                         if(val["active"] as? Bool == true){
-                            let meal = Meal(mealId: val["mealId"] as? String ?? "", name: val["name"] as? String ?? "", chefId: val["chefId"] as? String ?? "",  zipcode: val["zipcode"] as? String ?? "", description: val["description"] as? String ?? "", ingredients: [val["ingredients"] as? String ?? ""], time: val["time"] as? String ?? "", servingSize: val["servingSize"] as? Int ?? 0, price: val["price"] as? Float ?? 0.0, keywords: val["keywords"] as? String ?? "", active: val["active"] as? Bool ?? false)
+                            let meal = Meal(mealId: val["mealId"] as? String ?? "", name: val["name"] as? String ?? "", chefId: val["chefId"] as? String ?? "",  zipcode: val["zipcode"] as? String ?? "", description: val["description"] as? String ?? "", ingredients: val["ingredients"] as? String ?? "", time: val["time"] as? String ?? "", servingSize: val["servingSize"] as? Int ?? 0, price: val["price"] as? Float ?? 0.0, keywords: val["keywords"] as? String ?? "", active: val["active"] as? Bool ?? false)
                             meals.append(meal)
                         }
                     }
@@ -53,7 +53,7 @@ class MealTableHandler {
                         let words = val["keywords"] as! String
                         let name = val["name"] as! String
                         if((val["active"] as? Bool == true && name.lowercased().contains(keyword.lowercased()) || words.contains(keyword.lowercased())) && (val["zipcode"] as? String == zipcode)){
-                            let meal = Meal(mealId: val["mealId"] as? String ?? "", name: val["name"] as? String ?? "", chefId: val["chefId"] as? String ?? "",  zipcode: val["zipcode"] as? String ?? "", description: val["description"] as? String ?? "", ingredients: [val["ingredients"] as? String ?? ""], time: val["time"] as? String ?? "", servingSize: val["servingSize"] as? Int ?? 0, price: val["price"] as? Float ?? 0.0, keywords: val["keywords"] as? String ?? "", active: val["active"] as? Bool ?? false)
+                            let meal = Meal(mealId: val["mealId"] as? String ?? "", name: val["name"] as? String ?? "", chefId: val["chefId"] as? String ?? "",  zipcode: val["zipcode"] as? String ?? "", description: val["description"] as? String ?? "", ingredients: val["ingredients"] as? String ?? "", time: val["time"] as? String ?? "", servingSize: val["servingSize"] as? Int ?? 0, price: val["price"] as? Float ?? 0.0, keywords: val["keywords"] as? String ?? "", active: val["active"] as? Bool ?? false)
                             meals.append(meal)
                         }
                     }
@@ -80,7 +80,7 @@ class MealTableHandler {
                 for item in dict {
                     if let val = item.value as? NSDictionary {
                         if(val["chefId"] as? String == chefId){
-                            let meal = Meal(mealId: val["mealId"] as? String ?? "", name: val["name"] as? String ?? "", chefId: val["chefId"] as? String ?? "",  zipcode: val["zipcode"] as? String ?? "", description: val["description"] as? String ?? "", ingredients: [val["ingredients"] as? String ?? ""], time: val["time"] as? String ?? "", servingSize: val["servingSize"] as? Int ?? 0, price: val["price"] as? Float ?? 0.0, keywords: val["keywords"] as? String ?? "", active: val["active"] as? Bool ?? false)
+                            let meal = Meal(mealId: val["mealId"] as? String ?? "", name: val["name"] as? String ?? "", chefId: val["chefId"] as? String ?? "",  zipcode: val["zipcode"] as? String ?? "", description: val["description"] as? String ?? "", ingredients: val["ingredients"] as? String ?? "", time: val["time"] as? String ?? "", servingSize: val["servingSize"] as? Int ?? 0, price: val["price"] as? Float ?? 0.0, keywords: val["keywords"] as? String ?? "", active: val["active"] as? Bool ?? false)
                             meals.append(meal)
                         }
                     }

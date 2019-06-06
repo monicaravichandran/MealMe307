@@ -18,13 +18,32 @@ class AddMealViewController: UIViewController {
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var keywordsTextView: UITextView!
     @IBOutlet weak var cancelButton: UIButton!
+    var strName:String = ""
+    var strDesc:String = ""
+    var strTime:String = ""
+    var strServing:String = ""
+    var strPrice:String = ""
+    var strKeywords:String = ""
+    var strIngredients:String = ""
     var addedMeal:Meal?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let backButton = UIBarButtonItem()
         backButton.title = "Cancel"
-    self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        nameTextField.text = strName
+        descriptionTextView.text = strDesc
+        timeTextField.text = strTime
+        servingTextField.text = strServing
+        priceTextField.text = strPrice
+        keywordsTextView.text = strKeywords
+        ingredientsEntered.text = strIngredients
+        print("time",strTime)
+        print("keywords",strKeywords)
+        print("ingredients",strIngredients)
+
+        
         //self.navigationItem.setHidesBackButton(true, animated: true)
         //self.navigationItem.backBarButtonItem
         // Do any additional setup after loading the view.
@@ -50,7 +69,7 @@ class AddMealViewController: UIViewController {
         print(servingTextField.text!)
         print(priceTextField.text!)
         print(keywordsTextView.text!)
-        if(nameTextField.text?.isEmpty ?? false || descriptionTextView.text?.isEmpty ?? false || timeTextField.text?.isEmpty ?? false || servingTextField.text?.isEmpty ?? false || priceTextField.text?.isEmpty ?? false || keywordsTextView.text?.isEmpty ?? false){
+        if(nameTextField.text?.isEmpty ?? false || descriptionTextView.text?.isEmpty ?? false || timeTextField.text?.isEmpty ?? false || servingTextField.text?.isEmpty ?? false || priceTextField.text?.isEmpty ?? false || keywordsTextView.text?.isEmpty ?? false || ingredientsEntered.text?.isEmpty ?? false){
             
             let alert = UIAlertController(title: "Invalid Input", message: "One or more fields are empty.", preferredStyle: .alert)
             
@@ -59,11 +78,16 @@ class AddMealViewController: UIViewController {
         }
         else{
             //string.components(separatedBy: "|")
-            let ingredientsList = ingredientsEntered.text?.components(separatedBy: ",")
-            let id = UUID().uuidString
+            //let ingredientsList = ingredientsEntered.text?.components(separatedBy: ",")
+            var id = ""
+            if addedMeal != nil {
+                id = addedMeal!.mealId
+            } else {
+                id = UUID().uuidString
+            }
             let userTableHandler = UserTableHandler()
             userTableHandler.getUser(key: Auth.auth().currentUser?.uid ?? "") { (user) in
-                self.addedMeal = Meal(mealId: id, name: self.nameTextField.text ?? "", chefId: Auth.auth().currentUser?.uid ?? "", zipcode: user.zip as? String ?? "", description: self.descriptionTextView.text ?? "", ingredients: ingredientsList ?? [] , time: self.timeTextField.text ?? "", servingSize: self.servingTextField.text as? Int ?? 0, price: self.priceTextField.text as? Float ?? 0.0, keywords: self.keywordsTextView.text ?? "", active: true)
+                self.addedMeal = Meal(mealId: id, name: self.nameTextField.text ?? "", chefId: Auth.auth().currentUser?.uid ?? "", zipcode: user.zip as? String ?? "", description: self.descriptionTextView.text ?? "", ingredients: self.ingredientsEntered.text ?? "", time: self.timeTextField.text ?? "", servingSize: self.servingTextField.text as? Int ?? 0, price: self.priceTextField.text as? Float ?? 0.0, keywords: self.keywordsTextView.text ?? "", active: true)
                 let mealHandler = MealTableHandler()
                 mealHandler.addMeal(meal: self.addedMeal!)
                 userTableHandler.addMealToChef(chef: user, chefid: Auth.auth().currentUser?.uid ?? "", mealid: self.addedMeal!.mealId)

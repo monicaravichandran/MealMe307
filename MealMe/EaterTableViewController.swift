@@ -33,6 +33,7 @@ class EaterTableViewController: BaseViewController, UISearchResultsUpdating, UIS
         searchController.searchBar.delegate = self
         navigationItem.searchController = searchController
         //searchController.obscuresBackgroundDuringPresentation = false
+        //searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search for meals"
         //searchController.hidesNavigationBarDuringPresentation = false
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Meals", style: .plain, target: nil, action: nil)
