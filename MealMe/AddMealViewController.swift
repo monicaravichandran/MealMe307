@@ -39,7 +39,7 @@ class AddMealViewController: UIViewController {
         servingTextField.text = strServing
         priceTextField.text = strPrice
         keywordsTextView.text = strKeywords
-        ingredientsEntered.text = strIngredients
+        ingredientsTextView.text = strIngredients
         print("time",strTime)
         print("keywords",strKeywords)
         print("ingredients",strIngredients)
@@ -88,7 +88,7 @@ class AddMealViewController: UIViewController {
             }
             let userTableHandler = UserTableHandler()
             userTableHandler.getUser(key: Auth.auth().currentUser?.uid ?? "") { (user) in
-                self.addedMeal = Meal(mealId: id, name: self.nameTextField.text ?? "", chefId: Auth.auth().currentUser?.uid ?? "", zipcode: user.zip as? String ?? "", description: self.descriptionTextView.text ?? "", ingredients: self.ingredientsEntered.text ?? "", time: self.timeTextField.text ?? "", servingSize: self.servingTextField.text as? Int ?? 0, price: self.priceTextField.text as? String ?? "", keywords: self.keywordsTextView.text ?? "", active: true)
+                self.addedMeal = Meal(mealId: id, name: self.nameTextField.text ?? "", chefId: Auth.auth().currentUser?.uid ?? "", zipcode: user.zip as? String ?? "", description: self.descriptionTextView.text ?? "", ingredients: self.ingredientsTextView.text ?? "", time: self.timeTextField.text ?? "", servingSize: self.servingTextField.text as? String ?? "", price: self.priceTextField.text as? String ?? "", keywords: self.keywordsTextView.text ?? "", active: true)
                 let mealHandler = MealTableHandler()
                 mealHandler.addMeal(meal: self.addedMeal!)
                 userTableHandler.addMealToChef(chef: user, chefid: Auth.auth().currentUser?.uid ?? "", mealid: self.addedMeal!.mealId)

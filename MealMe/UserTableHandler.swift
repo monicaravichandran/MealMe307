@@ -18,7 +18,7 @@ class UserTableHandler {
     func addUser(user: User)
     {
         let users = ref.child("users")
-        users.child(user.uid).setValue(["name": user.displayName, "email": user.email, "phone": "N/A", "zip": 94086, "meals": [Meal](),"reviews": [Review](), "totalRating": 0.0, "numReviews":0])
+        users.child(user.uid).setValue(["name": user.displayName, "email": user.email, "phone": "N/A", "zip": "94086", "meals": [Meal](),"reviews": [Review](), "totalRating": 0.0, "numReviews":0])
     }
     
     func updateUser(user: MealMeUser, userid: String)
@@ -34,6 +34,7 @@ class UserTableHandler {
         var exists = 0
         ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
+            print(snapshot)
             if let dict = snapshot.value as? [String:Any?] {
                 for item in dict {
                     if item.key == key {
@@ -49,15 +50,16 @@ class UserTableHandler {
                         let meal = MealMeUser(name: val["name"] as? String ?? "", chefEmail: val["chefId"] as? String ?? "", avgRating: val["rating"] as? Float ?? 0.0)
                         meals.append(meal)*/
                 }
-                if(exists == 1){
-                    DispatchQueue.main.async {
-                        completion(mealMeUser!)
-                    }
-                }
-                else{
-                    let nilUser = MealMeUser(name: "NilUser", userEmail: "NIL", zip: "", phone: "NIL", meals: [], reviews: [], totalRating: 0.0, numReviews: 0)
-                    completion(nilUser)
-                }
+            }
+            if(exists == 1){
+                // DispatchQueue.main.async {
+                completion(mealMeUser!)
+                // }
+            }
+            else{
+                print("In NilUser")
+                let nilUser = MealMeUser(name: "NilUser", userEmail: "NIL", zip: "", phone: "NIL", meals: [], reviews: [], totalRating: 0.0, numReviews: 0)
+                completion(nilUser)
             }
             
             
