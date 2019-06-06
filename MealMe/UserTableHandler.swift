@@ -18,16 +18,15 @@ class UserTableHandler {
     func addUser(user: User)
     {
         let users = ref.child("users")
-        users.child(user.uid).setValue(["name": user.displayName, "email": user.email, "phone": "N/A", "zip": 94086, "meals": [Meal](),"reviews": [Review]()])
+        users.child(user.uid).setValue(["name": user.displayName, "email": user.email, "phone": "N/A", "zip": 94086, "meals": [Meal](),"reviews": [Review](), "totalRating": 0.0, "numReviews":0])
     }
-
     
     func updateUser(user: MealMeUser, userid: String)
     {
         let users = ref.child("users")
         
         users.child(userid).setValue(["name": user.name, "email": user.userEmail, "phone": user.phone, "zip": user.zip, "meals": user.meals,
-                                      "reviews":user.reviews])
+                                      "reviews":user.reviews, "totalRating":user.totalRating, "numReviews":user.numReviews])
     }
     
     func getUser(key : String, completion: @escaping (MealMeUser) -> Void) {
@@ -40,8 +39,7 @@ class UserTableHandler {
                     if item.key == key {
                         exists = 1
                         if let val = item.value as? NSDictionary{
-                            let curUser = MealMeUser(name: val["name"] as? String ?? "", userEmail: val["chefId"] as? String ?? "", zip: val["zip"] as? String ?? "", phone: val["phone"] as? String ?? "", meals: val["meals"] as?  [String] ?? [], reviews: val["reviews"] as? [String] ?? [])
-
+                            let curUser = MealMeUser(name: val["name"] as? String ?? "", userEmail: val["email"] as? String ?? "", zip: val["zip"] as? String ?? "", phone: val["phone"] as? String ?? "", meals: val["meals"] as?  [String] ?? [], reviews: val["reviews"] as?  [String] ?? [], totalRating: val["totalRating"] as? Float ?? 0.0, numReviews: val["numReviews"] as? Int ?? 0)
                             mealMeUser = curUser
                         }
                     }
@@ -57,8 +55,7 @@ class UserTableHandler {
                     }
                 }
                 else{
-                    let nilUser = MealMeUser(name: "NilUser", userEmail: "NIL", zip: "", phone: "NIL", meals: [], reviews: [])
-
+                    let nilUser = MealMeUser(name: "NilUser", userEmail: "NIL", zip: "", phone: "NIL", meals: [], reviews: [], totalRating: 0.0, numReviews: 0)
                     completion(nilUser)
                 }
             }
@@ -77,19 +74,19 @@ class UserTableHandler {
         var currMeals : [String]
         currMeals =  chef.meals
         currMeals.append(mealid)
-        let updatedUser = MealMeUser(name: chef.name, userEmail: chef.userEmail, zip: chef.zip, phone: chef.phone, meals: currMeals, reviews: chef.reviews)
+        let updatedUser = MealMeUser(name: chef.name, userEmail: chef.userEmail, zip: chef.zip, phone: chef.phone, meals: currMeals, reviews: chef.reviews, totalRating: chef.totalRating, numReviews: chef.numReviews)
         self.updateUser(user: updatedUser, userid: chefid)
     }
 
     
-    func addReviewToChef(chefid: String, reviewID: String)
+    func addReviewToChef(chefid: String, reviewID: String, rating: Float)
     {
         self.getUser(key: chefid, completion: { (chef) in
             
             var currReviews : [String]
             currReviews =  chef.reviews
             currReviews.append(reviewID)
-            let updatedUser = MealMeUser(name: chef.name, userEmail: chef.userEmail, zip: chef.zip, phone: chef.phone, meals: chef.meals, reviews: currReviews)
+            let updatedUser = MealMeUser(name: chef.name, userEmail: chef.userEmail, zip: chef.zip, phone: chef.phone, meals: chef.meals, reviews: currReviews, totalRating: chef.totalRating + rating, numReviews: chef.numReviews + 1)
             self.updateUser(user: updatedUser, userid: chefid)
         })
         

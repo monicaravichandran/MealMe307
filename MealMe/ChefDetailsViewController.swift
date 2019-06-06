@@ -46,14 +46,25 @@ class ChefDetailsViewController: UIViewController {
             var newReview = Review(reviewId: UUID().uuidString, rating: Double(self.slider!.value), text: self.reviewText.text, eaterName: eaterUser.name, eaterId: tempUser!.uid, chefId: self.chefId!)
             
             reviewTable.addReviewToChef(review: newReview)
-            userTable.addReviewToChef(chefid: self.chefId!, reviewID: newReview.reviewId)
+            userTable.addReviewToChef(chefid: self.chefId!, reviewID: newReview.reviewId, rating: self.slider.value)
                     
             })
             
         }
 
         
+    @IBAction func viewReviewsClicked(_ sender: Any) {
+        self.performSegue(withIdentifier: "viewAllReviews", sender: self)
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "viewAllReviews" {
+            let reviewsVC = segue.destination as? ReviewsViewController
+            reviewsVC?.chefId = self.chefId
+        }
+    }
     /*
     // MARK: - Navigation
 

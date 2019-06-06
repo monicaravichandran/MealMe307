@@ -17,6 +17,8 @@ struct MealMeUser {
     let phone: String
     let meals: [String]
     let reviews: [String]
+    let totalRating: Float
+    let numReviews: Int
     // let image: UIImage
     // let description: String
     // let ingredients: [String]

@@ -12,7 +12,7 @@ class MealDetailsViewController: UIViewController {
     
     var meal:Meal?
     @IBOutlet weak var mealName: UILabel!
-    @IBOutlet weak var ChefNameButton: UIButton!
+    //@IBOutlet weak var ChefNameButton: UIButton!
     var chef:MealMeUser?
     
     override func viewDidLoad() {
@@ -23,7 +23,7 @@ class MealDetailsViewController: UIViewController {
         userHandler.getUser(key: self.meal?.chefId as? String ?? "") { (tempUser) in
             print("HEY HERE")
             print(tempUser.name)
-            self.ChefNameButton.titleLabel?.text = tempUser.name
+           // self.ChefNameButton.titleLabel?.text = tempUser.name
         }
         mealName.text = meal?.name
         
