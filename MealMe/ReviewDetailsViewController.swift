@@ -12,16 +12,21 @@ class ReviewDetailsViewController: UIViewController{
 
     var review: Review?
     
+    
     @IBOutlet weak var eaterName: UILabel!
-    @IBOutlet weak var rating: UILabel!
     
     @IBOutlet weak var reviewText: UILabel!
+    @IBOutlet weak var rating: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         eaterName.text = review?.eaterName
         rating.text = String(format: "%.2f",(review?.rating)!)
         reviewText.text = review?.text
+        eaterName.sizeToFit()
+        rating.sizeToFit()
+        reviewText.numberOfLines = 10
+        reviewText.sizeToFit()
         // Do any additional setup after loading the view.
     }
     
