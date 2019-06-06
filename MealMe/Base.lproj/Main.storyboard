@@ -488,14 +488,6 @@
                                     <action selector="mealNameEntered:" destination="5xN-cy-rA3" eventType="editingDidEnd" id="UrH-S3-jRj"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0m-S7-atz">
-                                <rect key="frame" x="0.0" y="698" width="414" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Submit"/>
-                                <connections>
-                                    <action selector="submitClicked:" destination="5xN-cy-rA3" eventType="touchUpInside" id="j0Y-Q0-pwo"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ingredients: *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwu-64-T9a">
                                 <rect key="frame" x="20" y="181" width="103" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -603,6 +595,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0m-S7-atz">
+                                <rect key="frame" x="0.0" y="698" width="414" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitClicked:" destination="5xN-cy-rA3" eventType="touchUpInside" id="j0Y-Q0-pwo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.52029818299999997" blue="0.39381286500000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="fk2-cv-iuC"/>
@@ -980,7 +980,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="421-YB-s0a"/>
         <segue reference="Dy2-0W-LPS"/>
-        <segue reference="KpB-pI-nE9"/>
+        <segue reference="28P-8t-UfC"/>
         <segue reference="UFr-4C-SWf"/>
     </inferredMetricsTieBreakers>
 </document>
