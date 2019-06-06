@@ -12,6 +12,7 @@ class BaseViewController: UITableViewController, SlideMenuDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.accessibilityIdentifier = "startUpView"
         // Do any additional setup after loading the view.
     }
     

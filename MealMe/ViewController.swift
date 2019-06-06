@@ -21,6 +21,7 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         super.viewDidLoad()
         
         GIDSignIn.sharedInstance().uiDelegate = self
+        view.accessibilityIdentifier = "startUpView"
         
         //let appDelegate = UIApplication.shared.delegate as! AppDelegate
          

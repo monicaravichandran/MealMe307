@@ -66,6 +66,8 @@ class EaterTableViewController: BaseViewController, UISearchResultsUpdating, UIS
             self.meals += mealsArr
             self.tableView.reloadData()
         }
+        view.accessibilityIdentifier = "eaterTableView"
+
        // self.userTable.addUser(currUser: GIDGoogleUser)
         
         // Uncomment the following line to preserve selection between presentations

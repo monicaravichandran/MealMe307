@@ -40,7 +40,6 @@ class ReviewTableHandler {
         }) { (error) in
             print(error.localizedDescription)
         }
-        
     }
     
 }
