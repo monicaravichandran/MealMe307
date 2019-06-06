@@ -16,7 +16,7 @@ struct Meal {
     let zipcode: String
     // let image: UIImage
     let description: String
-    let ingredients: [String]
+    let ingredients: String
     let time: String
     let servingSize: Int
     let price: Float

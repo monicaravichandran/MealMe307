@@ -106,6 +106,36 @@ class ChefTableViewController: BaseViewController, SlideMenuDelegate2 {
         //selectedMeal = meals[indexPath.row]
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editMealSegue" {
+            let selectedMeal:Meal
+            let path = self.tableView.indexPathForSelectedRow
+            selectedMeal = meals[path!.row]
+            let editMealVC = segue.destination as? AddMealViewController
+            editMealVC?.addedMeal = selectedMeal
+            editMealVC?.strName = selectedMeal.name
+            editMealVC?.strDesc = selectedMeal.description
+            editMealVC?.strPrice = String(selectedMeal.price)
+            editMealVC?.strTime = selectedMeal.time
+            editMealVC?.strServing = String(selectedMeal.servingSize)
+            editMealVC?.strKeywords = selectedMeal.keywords
+            editMealVC?.strIngredients = selectedMeal.ingredients
+            print("ingredients asdf",selectedMeal.ingredients)
+            //vc.stringHolder = textField.text!
+            /*print(selectedMeal.name)
+            editMealVC?.nameTextField.insertText(selectedMeal.name)
+            editMealVC?.nameTextField.text = selectedMeal.name
+            editMealVC?.keywordsTextView.text = selectedMeal.keywords
+            editMealVC?.ingredientsEntered.text = selectedMeal.ingredients.joined(separator: ",")
+            editMealVC?.priceTextField.text = String(selectedMeal.price)
+            editMealVC?.servingTextField.text = String(selectedMeal.servingSize)*/
+            
+            
+        }
+        
+    }
+    
+    
 }
     /*
     // MARK: - Navigation
