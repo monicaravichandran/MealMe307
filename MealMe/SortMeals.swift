@@ -10,8 +10,9 @@ import Foundation
 import GoogleSignIn
 import Firebase
 
-class UserTableHandler {
+class SortMeals {
 
+    func
     
     
     
