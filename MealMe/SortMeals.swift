@@ -55,7 +55,7 @@ class SortMeals
         }
         
         group.notify(queue: DispatchQueue.main, execute: {() in
-            newMeals.sort { $0.avgRating < $1.avgRating}
+            newMeals.sort { $0.avgRating > $1.avgRating}
             completion(newMeals)
             
         })

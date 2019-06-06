@@ -212,6 +212,11 @@ class EaterTableViewController: BaseViewController, UISearchResultsUpdating, UIS
                     self.tableView.reloadData()
                 })
             })
+        } else if(searchBar.scopeButtonTitles![selectedScope] == "None") {
+            mealHandler.getMeals() { (mealsArr) in
+                self.meals = mealsArr
+                self.tableView.reloadData()
+            }
         }
         
     }
