@@ -39,7 +39,7 @@ class Search{
        //     return meals
             
        // }
-        
+    
     }
     func searchHelper(zipcode:Int){
         var postal_codes = [Int]()

@@ -33,8 +33,14 @@ class MealDetailsViewController: UIViewController {
            // self.ChefNameButton.titleLabel?.text = tempUser.name
         }
         mealName.text = meal?.name
+        mealName.numberOfLines = 3
+        mealName.sizeToFit()
         descriptionLabel.text = meal?.description
+        descriptionLabel.numberOfLines = 4
+        descriptionLabel.sizeToFit()
         ingredientsLabel.text = meal?.ingredients
+        ingredientsLabel.numberOfLines = 4
+        ingredientsLabel.sizeToFit()
         timeLabel.text = meal?.time
         servingLabel.text = meal?.servingSize
         priceLabel.text = meal?.price
