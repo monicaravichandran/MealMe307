@@ -14,18 +14,30 @@ class MealDetailsViewController: UIViewController {
     @IBOutlet weak var mealName: UILabel!
     //@IBOutlet weak var ChefNameButton: UIButton!
     var chef:MealMeUser?
+    @IBOutlet weak var descriptionLabel: UILabel!
     
+    @IBOutlet weak var ingredientsLabel: UILabel!
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    @IBOutlet weak var servingLabel: UILabel!
+    
+    @IBOutlet weak var priceLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Meal Details", style: .plain, target: nil, action: nil)
         let userHandler = UserTableHandler()
         
         userHandler.getUser(key: self.meal?.chefId as? String ?? "") { (tempUser) in
-            print("HEY HERE")
             print(tempUser.name)
            // self.ChefNameButton.titleLabel?.text = tempUser.name
         }
         mealName.text = meal?.name
+        descriptionLabel.text = meal?.description
+        ingredientsLabel.text = meal?.ingredients
+        timeLabel.text = meal?.time
+        servingLabel.text = meal?.servingSize
+        priceLabel.text = meal?.price
         
         // Do any additional setup after loading the view.
     }

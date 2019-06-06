@@ -11,11 +11,12 @@ import Firebase
 
 class AddMealViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var timeTextField: UITextField!
     @IBOutlet weak var servingTextField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
+    @IBOutlet weak var ingredientsTextView: UITextView!
     @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var keywordsTextView: UITextView!
     @IBOutlet weak var cancelButton: UIButton!
     var addedMeal:Meal?
@@ -34,7 +35,6 @@ class AddMealViewController: UIViewController {
     @IBAction func mealNameEntered(_ sender: Any) {
     }
     
-    @IBOutlet weak var ingredientsEntered: UITextView!
     
     @IBAction func timeEntered(_ sender: Any) {
     }
@@ -50,7 +50,8 @@ class AddMealViewController: UIViewController {
         print(servingTextField.text!)
         print(priceTextField.text!)
         print(keywordsTextView.text!)
-        if(nameTextField.text?.isEmpty ?? false || descriptionTextView.text?.isEmpty ?? false || timeTextField.text?.isEmpty ?? false || servingTextField.text?.isEmpty ?? false || priceTextField.text?.isEmpty ?? false || keywordsTextView.text?.isEmpty ?? false){
+        if(nameTextField.text?.isEmpty ?? false || descriptionTextView.text?.isEmpty ?? false || timeTextField.text?.isEmpty ?? false || servingTextField.text?.isEmpty ?? false || priceTextField.text?.isEmpty ?? false || keywordsTextView.text?.isEmpty ?? false ||
+            ingredientsTextView.text?.isEmpty ?? false){
             
             let alert = UIAlertController(title: "Invalid Input", message: "One or more fields are empty.", preferredStyle: .alert)
             
@@ -59,11 +60,10 @@ class AddMealViewController: UIViewController {
         }
         else{
             //string.components(separatedBy: "|")
-            let ingredientsList = ingredientsEntered.text?.components(separatedBy: ",")
             let id = UUID().uuidString
             let userTableHandler = UserTableHandler()
             userTableHandler.getUser(key: Auth.auth().currentUser?.uid ?? "") { (user) in
-                self.addedMeal = Meal(mealId: id, name: self.nameTextField.text ?? "", chefId: Auth.auth().currentUser?.uid ?? "", zipcode: user.zip as? String ?? "", description: self.descriptionTextView.text ?? "", ingredients: ingredientsList ?? [] , time: self.timeTextField.text ?? "", servingSize: self.servingTextField.text as? Int ?? 0, price: self.priceTextField.text as? Float ?? 0.0, keywords: self.keywordsTextView.text ?? "", active: true)
+                self.addedMeal = Meal(mealId: id, name: self.nameTextField.text ?? "", chefId: Auth.auth().currentUser?.uid ?? "", zipcode: user.zip as? String ?? "", description: self.descriptionTextView.text ?? "", ingredients: self.ingredientsTextView.text ?? "" , time: self.timeTextField.text ?? "", servingSize: self.servingTextField.text as? String ?? "", price: self.priceTextField.text as? String ?? "", keywords: self.keywordsTextView.text ?? "", active: true)
                 let mealHandler = MealTableHandler()
                 mealHandler.addMeal(meal: self.addedMeal!)
                 userTableHandler.addMealToChef(chef: user, chefid: Auth.auth().currentUser?.uid ?? "", mealid: self.addedMeal!.mealId)
