@@ -419,7 +419,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peo-SR-rcv">
-                                            <rect key="frame" x="106" y="11" width="288" height="42"/>
+                                            <rect key="frame" x="20" y="38" width="264" height="42"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -440,6 +440,13 @@
                                                 <action selector="deleteClicked:" destination="k6T-Gb-58p" eventType="touchUpInside" id="Fio-l8-mXi"/>
                                             </connections>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Activate/Disable:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0O-KN-8Nq">
+                                            <rect key="frame" x="230" y="9" width="129" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -973,7 +980,7 @@
         <segue reference="421-YB-s0a"/>
         <segue reference="Dy2-0W-LPS"/>
         <segue reference="28P-8t-UfC"/>
-        <segue reference="cyI-f7-TJm"/>
+        <segue reference="bAO-Vb-TYK"/>
         <segue reference="qwZ-Ae-Tru"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -137,14 +137,7 @@ class ChefTableViewController: BaseViewController, SlideMenuDelegate2,deleteCell
             editMealVC?.strKeywords = selectedMeal.keywords
             editMealVC?.strIngredients = selectedMeal.ingredients
             print("ingredients asdf",selectedMeal.ingredients)
-            //vc.stringHolder = textField.text!
-            /*print(selectedMeal.name)
-            editMealVC?.nameTextField.insertText(selectedMeal.name)
-            editMealVC?.nameTextField.text = selectedMeal.name
-            editMealVC?.keywordsTextView.text = selectedMeal.keywords
-            editMealVC?.ingredientsEntered.text = selectedMeal.ingredients.joined(separator: ",")
-            editMealVC?.priceTextField.text = String(selectedMeal.price)
-            editMealVC?.servingTextField.text = String(selectedMeal.servingSize)*/
+            
             
             
         }
