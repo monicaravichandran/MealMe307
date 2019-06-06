@@ -15,6 +15,7 @@
 		308E3521225AFE4C000D57EC /* MealMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308E3520225AFE4C000D57EC /* MealMeTests.swift */; };
 		308E352C225AFE4C000D57EC /* MealMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308E352B225AFE4C000D57EC /* MealMeUITests.swift */; };
 		308E353A225AFEF2000D57EC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 308E3539225AFEF2000D57EC /* GoogleService-Info.plist */; };
+		30C9C42C22A8F39C0024266B /* SortMeals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C9C42B22A8F39C0024266B /* SortMeals.swift */; };
 		435658B6EB135B02785FD1BD /* Pods_MealMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC1DF1898CB9D213D9EBC14 /* Pods_MealMeTests.framework */; };
 		483CBE276FB63630F0D71143 /* Pods_MealMeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A12A07FF619BD4F54C4A13 /* Pods_MealMeUITests.framework */; };
 		CE7DD058229653A200453BBA /* MealTableHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7DD057229653A200453BBA /* MealTableHandler.swift */; };
@@ -79,6 +80,7 @@
 		308E352B225AFE4C000D57EC /* MealMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealMeUITests.swift; sourceTree = "<group>"; };
 		308E352D225AFE4C000D57EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		308E3539225AFEF2000D57EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		30C9C42B22A8F39C0024266B /* SortMeals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortMeals.swift; sourceTree = "<group>"; };
 		769279E279D1E2C7714D2505 /* Pods-MealMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealMe.release.xcconfig"; path = "Target Support Files/Pods-MealMe/Pods-MealMe.release.xcconfig"; sourceTree = "<group>"; };
 		7D26DF736A79F0BBDC24434D /* Pods-MealMeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealMeUITests.debug.xcconfig"; path = "Target Support Files/Pods-MealMeUITests/Pods-MealMeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		93F3B651E748E34E0E8961A8 /* Pods-MealMeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealMeUITests.release.xcconfig"; path = "Target Support Files/Pods-MealMeUITests/Pods-MealMeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				F51A186D22A24630009EBE0C /* Search.swift */,
 				CEA0AC1422A86EB9005DB53D /* ReviewDetailsViewController.swift */,
 				CEA0AC1822A8724E005DB53D /* ReviewViewCell.swift */,
+				30C9C42B22A8F39C0024266B /* SortMeals.swift */,
 			);
 			path = MealMe;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 			files = (
 				CEA0AC03229F68BF005DB53D /* EditAccountViewController.swift in Sources */,
 				CEA0AC0722A75236005DB53D /* ReviewTableHandler.swift in Sources */,
+				30C9C42C22A8F39C0024266B /* SortMeals.swift in Sources */,
 				CEA0AC0B22A7523C005DB53D /* Review.swift in Sources */,
 				308E350E225AFE4B000D57EC /* ViewController.swift in Sources */,
 				CEA0AC1922A8724E005DB53D /* ReviewViewCell.swift in Sources */,

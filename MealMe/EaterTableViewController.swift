@@ -200,6 +200,21 @@ class EaterTableViewController: BaseViewController, UISearchResultsUpdating, UIS
         }
         
     }
+    
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        if(searchBar.scopeButtonTitles![selectedScope] == "Rating"){
+            let sortMeals = SortMeals()
+            sortMeals.sortMealsRating(mealsList: self.meals, completion: { (newSortedMeals) in
+                print("THIS")
+                print(newSortedMeals)
+                sortMeals.convertMeals(mealsSort: newSortedMeals, completion: { (newSortedMeals) in
+                    self.meals = newSortedMeals
+                    self.tableView.reloadData()
+                })
+            })
+        }
+        
+    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
