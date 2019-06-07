@@ -707,7 +707,6 @@
                                 <state key="normal" title="Submit Review"/>
                                 <connections>
                                     <action selector="submitReview:" destination="pw7-7q-gvb" eventType="touchUpInside" id="1vR-sM-9uf"/>
-                                    <segue destination="gfT-IP-jHb" kind="show" id="cyI-f7-TJm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -976,7 +975,6 @@
         <segue reference="421-YB-s0a"/>
         <segue reference="Dy2-0W-LPS"/>
         <segue reference="28P-8t-UfC"/>
-        <segue reference="bAO-Vb-TYK"/>
         <segue reference="qwZ-Ae-Tru"/>
     </inferredMetricsTieBreakers>
 </document>
