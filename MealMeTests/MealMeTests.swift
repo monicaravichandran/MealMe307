@@ -20,15 +20,15 @@ class MealMeTests: XCTestCase {
     }
 
     func testMeal() {
-        let m1 = Meal(mealId: "1234", name: "cookie", chefId: "ryan", description: "its a cookie", ingredients: ["chocolate", "flour"], time: "1", servingSize: 1, price: 2.45, keywords: "a b c d", active: true)
+        let m1 = Meal(mealId: "1234", name: "cookie", chefId: "ryan", zipcode: "94086", description: "its a cookie", ingredients: "chocolate", time: "1", servingSize: "1", price: "2.45", keywords: "a b c d", active: true)
         XCTAssertEqual(m1.mealId, "1234")
         XCTAssertEqual(m1.chefId, "ryan")
     }
     
     func testUser() {
-        let u1 = MealMeUser(name: "ryan", userEmail: "rpowell311@gmail.com", zip: 93410, phone: "555555", meals: ["id1", "id2", "id3"], reviews: ["a", "b", "c"])
+        let u1 = MealMeUser(name: "ryan", userEmail: "rpowell311@gmail.com", zip: "93410", phone: "555555", meals: ["id1", "id2", "id3"], reviews: ["a", "b", "c"], totalRating: 3.3, numReviews: 3)
         XCTAssertEqual(u1.name, "ryan")
-        XCTAssertEqual(u1.zip, 93410)
+        XCTAssertEqual(u1.zip, "93410")
     }
   
     func testReview() {

@@ -47,14 +47,15 @@ class ChefDetailsViewController: UIViewController {
             
             reviewTable.addReviewToChef(review: newReview)
             userTable.addReviewToChef(chefid: self.chefId!, reviewID: newReview.reviewId, rating: self.slider.value)
-                    
+            self.navigationController?.popViewController(animated: true)
             })
             
-        }
+    }
 
         
     @IBAction func viewReviewsClicked(_ sender: Any) {
         self.performSegue(withIdentifier: "viewAllReviews", sender: self)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
