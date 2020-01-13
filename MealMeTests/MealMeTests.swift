@@ -39,9 +39,7 @@ class MealMeTests: XCTestCase {
     
     func testGetReviews() {
         ReviewTableHandler().getReviewsForChef(chefID: "VV3qOoOkcQPyIyu45poBDClm2le2", completion: {(reviews) in
-            XCTAssertEqual(reviews.count, 1)
-            print("REVIEWS COUNT")
-            print(reviews.count)
+            XCTAssertEqual(reviews.count, 7)
         })
     }
     
@@ -51,8 +49,39 @@ class MealMeTests: XCTestCase {
         print("REVIEWS COUNT")
         ReviewTableHandler().getReviewsForChef(chefID: "SRoF2D32BNYUPZsBwkjFsjO0O772", completion: {(reviews) in
             XCTAssertEqual(reviews.count, 1)
-            print("REVIEWS COUNT")
-            print(reviews.count)
+        })
+    }
+    
+    func testUpdateUser() {
+        let u1 = MealMeUser(name: "ryan", userEmail: "rpowell311@gmail.com", zip: "93410", phone: "555555", meals: ["id1", "id2", "id3"], reviews: ["a", "b", "c"], totalRating: 3.3, numReviews: 3)
+        UserTableHandler().updateUser(user: u1, userid: "SRoF2D32BNYUPZsBwkjFsjO0O772")
+        UserTableHandler().getUser(key: "SRoF2D32BNYUPZsBwkjFsjO0O772", completion: {(mealMeUser) in
+            XCTAssertEqual(mealMeUser.zip, "93410")})
+    }
+    
+    func testGetMealsAll() {
+        MealTableHandler().getMeals(completion: {(meals) in
+            XCTAssertEqual(meals.count, 5)
+        })
+    }
+    
+    func testGetMealsRefined() {
+        MealTableHandler().getMeals(zipcode: "93405", keyword: "pizza", completion: {(meals) in
+            XCTAssertEqual(meals.count, 2)
+        })
+    }
+    
+    func testAddMealToChef() {
+        let u1 = MealMeUser(name: "ryan", userEmail: "rpowell311@gmail.com", zip: "93410", phone: "555555", meals: ["id1", "id2", "id3"], reviews: ["a", "b", "c"], totalRating: 3.3, numReviews: 3)
+        UserTableHandler().addMealToChef(chef: u1, chefid: "SRoF2D32BNYUPZsBwkjFsjO0O772", mealid: "abcd")
+        MealTableHandler().getMeals(chefId: "SRoF2D32BNYUPZsBwkjFsjO0O772", completion: {(meals) in
+                XCTAssertEqual(meals.count, 0)
+            })
+    }
+    
+    func testGetUser() {
+        UserTableHandler().getUser(key: "SRoF2D32BNYUPZsBwkjFsjO0O772", completion: {(user) in
+                XCTAssertEqual(user.name, "ryan")
         })
     }
     
@@ -72,7 +101,7 @@ class MealMeTests: XCTestCase {
         }
     }
     
-    func testAddUserPerformance() {
+    func testGetUserPerformance() {
         self.measure {
              UserTableHandler().getUser(key: "SRoF2D32BNYUPZsBwkjFsjO0O772", completion: {(user) in})
         }
